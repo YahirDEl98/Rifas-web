@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RifaPlus - Gana un iPhone 15 Pro Max 256GB | Rifas 100% Transparentes</title>
+    <meta name="description" content="Participa en la rifa del iPhone 15 Pro Max 256GB. Sorteo 100% transparente en vivo. Compra tus boletos de forma segura.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER CON MENÚ -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🎯</span>
+                    <h1 class="logo-text">RifaPlus</h1>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="compra.html" class="nav-link">Comprar</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="mis-boletos.html" class="nav-link">Mis Boletos</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="carrito-nav" id="carritoNav" aria-label="Carrito de compras">
+                    <span class="carrito-icon" aria-hidden="true">🛒</span>
+                    <span class="carrito-count">0</span>
+                    <span class="sr-only">0 items en el carrito</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-menu" id="overlayMenu" aria-hidden="true">
+            <div class="overlay-inner">
+                <button class="overlay-close" id="overlayClose" aria-label="Cerrar menú">×</button>
+                <a href="#inicio" class="overlay-link">Inicio</a>
+                <a href="compra.html" class="overlay-link">Comprar</a>
+                <a href="#faq" class="overlay-link">FAQ</a>
+                <a href="mis-boletos.html" class="overlay-link">Mis Boletos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Gana un <span class="highlight">iPhone 15 Pro Max 256GB</span></h1>
+                <p class="hero-description">256GB - Último Modelo - Totalmente Nuevo en Caja</p>
+                <button class="btn btn-primary" onclick="window.location.href='compra.html'" aria-label="Comprar boletos ahora">
+                    Comprar Boletos Ahora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRUSEL -->
+    <section class="carrusel-section" aria-label="Galería de imágenes del premio">
+        <div class="container">
+            <div class="carrusel">
+                <div class="carrusel-inner">
+                    <div class="carrusel-item active">
+                        <img src="images/frontal.webp" alt="iPhone 15 Pro Max - Vista frontal" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="images/trasera.jpeg" alt="iPhone 15 Pro Max - Vista posterior" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="images/caja.jpg" alt="iPhone 15 Pro Max - En su caja original" loading="lazy">
+                    </div>
+                </div>
+                <button class="carrusel-prev" aria-label="Imagen anterior">‹</button>
+                <button class="carrusel-next" aria-label="Siguiente imagen">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA - URGENCIA -->
+    <section class="countdown-section">
+        <div class="container">
+            <div class="countdown-card">
+                <div class="countdown-header">
+                    <span class="countdown-badge">🔥 OPORTUNIDAD ÚNICA</span>
+                    <h2 class="countdown-title">¡El Sorteo Está Cada Vez Más Cerca!</h2>
+                    <p class="countdown-subtitle">No pierdas tu oportunidad de ganar este increíble iPhone 15 Pro Max. 
+                    <strong>Cada boleto comprado aumenta tus posibilidades de ser el afortunado ganador.</strong></p>
+                </div>
+                
+                <div class="countdown-timer" aria-live="polite">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">00</span>
+                        <span class="countdown-label">DÍAS</span>
+                    </div>
+                    <div class="countdown-separator" aria-hidden="true">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">00</span>
+                        <span class="countdown-label">HORAS</span>
+                    </div>
+                    <div class="countdown-separator" aria-hidden="true">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">00</span>
+                        <span class="countdown-label">MINUTOS</span>
+                    </div>
+                    <div class="countdown-separator" aria-hidden="true">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">00</span>
+                        <span class="countdown-label">SEGUNDOS</span>
+                    </div>
+                </div>
+
+                <div class="countdown-progress">
+                    <div class="progress-label">
+                        <span class="progress-text">Boletos Vendidos</span>
+                        <span class="progress-percentage" id="porcentaje-vendido">65%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span><strong id="boletos-vendidos">325</strong> vendidos</span>
+                        <span class="progress-divider" aria-hidden="true">•</span>
+                        <span><strong id="boletos-restantes">175</strong> disponibles</span>
+                    </div>
+                </div>
+
+                <div class="countdown-cta">
+                    <p class="urgency-text">⏰ <strong>¡ÚLTIMAS OPORTUNIDADES!</strong> Los boletos se agotan rápidamente</p>
+                    <button class="btn btn-urgency" onclick="window.location.href='compra.html'">
+                        🎫 COMPRAR BOLETOS AHORA - GARANTIZA TU OPORTUNIDAD
+                    </button>
+                    <p class="small-text">✅ Compra 100% segura | 🚀 Entrega inmediata de números | 📱 Soporte 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓN DE LA RIFA -->
+    <section class="info-rifa">
+        <div class="container">
+            <h2 class="section-title">📅 Información del Sorteo</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-icon" aria-hidden="true">🗓️</span>
+                    <h3>Fecha del Sorteo</h3>
+                    <p>15 de Diciembre 2025</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon" aria-hidden="true">⏰</span>
+                    <h3>Hora</h3>
+                    <p>8:00 PM (Hora Centro México)</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon" aria-hidden="true">📍</span>
+                    <h3>Modalidad</h3>
+                    <p>Transmisión en Vivo por Facebook</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon" aria-hidden="true">🎯</span>
+                    <h3>Total de Boletos</h3>
+                    <p>500 disponibles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRECIOS Y PROMOCIONES -->
+    <section class="precios-section">
+        <div class="container">
+            <h2 class="section-title">💰 Precios y Promociones</h2>
+            <div class="precios-grid">
+                <div class="precio-card">
+                    <div class="precio">$50</div>
+                    <p class="precio-desc">Compra individual</p>
+                    <button class="btn btn-secondary" onclick="window.location.href='compra.html'">Comprar</button>
+                </div>
+                <div class="precio-card">
+                    <div class="precio">10 boletos × $450</div>
+                    <p class="precio-desc">Ahorra $50</p>
+                    <button class="btn btn-primary" onclick="window.location.href='compra.html'">Comprar</button>
+                </div>
+                <div class="precio-card">
+                    <div class="precio">20 boletos × $800</div>
+                    <p class="precio-desc">Ahorra $200</p>
+                    <button class="btn btn-secondary" onclick="window.location.href='compra.html'">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto-section">
+        <div class="container">
+            <h2 class="section-title">📞 Contacto y Redes Sociales</h2>
+            <div class="contacto-grid">
+                <div class="contacto-card">
+                    <i class="fab fa-whatsapp contacto-icon"></i>
+                    <h3>WhatsApp</h3>
+                    <p>55-1234-5678</p>
+                    <a href="https://wa.me/5215512345678" class="btn btn-contacto" target="_blank">
+                        Contactar
+                    </a>
+                </div>
+                <div class="contacto-card">
+                    <i class="fab fa-facebook-f contacto-icon"></i>
+                    <h3>Facebook</h3>
+                    <p>/MiRifaOficial</p>
+                    <a href="https://facebook.com/MiRifaOficial" class="btn btn-contacto" target="_blank">
+                        Seguir
+                    </a>
+                </div>
+                <div class="contacto-card">
+                    <i class="fab fa-instagram contacto-icon"></i>
+                    <h3>Instagram</h3>
+                    <p>@MiRifaOficial</p>
+                    <a href="https://instagram.com/MiRifaOficial" class="btn btn-contacto" target="_blank">
+                        Seguir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="footer-logo-icon">🎯</span>
+                        <h3>RifaPlus</h3>
+                    </div>
+                    <p class="footer-description">La mejor plataforma para rifas en línea. Transparencia, seguridad y emoción garantizada.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/MiRifaOficial" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/MiRifaOficial" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="compra.html">Comprar Boletos</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="mis-boletos.html">Mis Boletos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terminos">Términos y Condiciones</a></li>
+                        <li><a href="#privacidad">Política de Privacidad</a></li>
+                        <li><a href="#cookies">Política de Cookies</a></li>
+                        <li><a href="#soporte">Contacto y Soporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:contacto@mirifa.com">contacto@mirifa.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+525512345678">+52 55-1234-5678</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> México</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p>&copy; 2024 <strong>RifaPlus</strong>. Todos los derechos reservados. | Diseñado con ❤️ para ti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+//cd ~/Desktop/rifas-web && open -a "Google Chrome" index.html

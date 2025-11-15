@@ -1,0 +1,11 @@
+{
+  "name": "rifaplus-e2e",
+  "version": "1.0.0",
+  "description": "End-to-end tests for RifaPlus (compra -> orden -> admin)",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

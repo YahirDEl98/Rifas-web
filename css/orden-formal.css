@@ -1,0 +1,369 @@
+/* ====================================
+   ESTILOS MODAL ORDEN FORMAL (PDF)
+   ==================================== */
+
+.modal-orden-formal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+    animation: fadeIn var(--transition-normal);
+}
+
+.modal-orden-formal.show {
+    display: flex;
+}
+
+/* Contenedor principal de la orden */
+.orden-formal-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Header del modal */
+.orden-formal-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    text-align: center;
+    border-bottom: 3px solid var(--secondary);
+}
+
+.orden-formal-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.orden-formal-header p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+}
+
+/* Contenido de la orden (PDF-like) */
+.orden-formal-content {
+    padding: 2rem;
+    background: white;
+}
+
+/* Estilos para impresión/PDF */
+.orden-documento {
+    background: white;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Encabezado del documento */
+.documento-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 1rem;
+}
+
+.documento-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.documento-numero {
+    text-align: right;
+}
+
+.documento-numero-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.documento-numero-valor {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.5rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    display: inline-block;
+    box-shadow: 0 6px 18px rgba(124,58,237,0.18);
+}
+
+/* Secciones del documento */
+.documento-seccion {
+    margin-bottom: 2rem;
+}
+
+.documento-seccion-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid de 2 columnas para datos */
+.documento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.documento-campo {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+}
+
+.documento-campo-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.documento-campo-valor {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    word-break: break-word;
+}
+
+/* Tabla de boletos */
+.documento-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.documento-tabla thead {
+    background: var(--primary);
+    color: white;
+}
+
+.documento-tabla th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.documento-tabla td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.documento-tabla tbody tr:hover {
+    background: var(--bg-light);
+}
+
+/* Fila de totales */
+.documento-tabla-total {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(167, 139, 250, 0.05) 100%);
+    font-weight: 700;
+    border-top: 2px solid var(--primary);
+}
+
+/* Detalles bancarios destacados */
+.detalles-banco {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 100%);
+    border-left: 6px solid var(--secondary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin: 1.5rem 0;
+}
+
+.detalles-banco-titulo {
+    font-size: 0.9rem;
+    color: #92400E;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.detalles-banco-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.detalles-banco-item {
+    background: white;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+}
+
+.detalles-banco-label {
+    font-size: 0.75rem;
+    color: #92400E;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.detalles-banco-valor {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #78350F;
+    font-family: 'Courier New', monospace;
+    word-break: break-word;
+}
+
+/* Pie del documento */
+.documento-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border-color);
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.documento-footer-nota {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Footer del modal con botones */
+.orden-formal-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    justify-content: flex-end;
+}
+
+.orden-formal-footer .btn {
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+}
+
+.btn-descargar {
+    background: linear-gradient(135deg, var(--secondary) 0%, #FBBF24 100%);
+    color: white;
+    border: none;
+}
+
+.btn-descargar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+}
+
+/* Estilos para impresión */
+@media print {
+    .orden-formal-header,
+    .orden-formal-footer,
+    .modal-overlay {
+        display: none !important;
+    }
+
+    .orden-formal-container {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+    }
+
+    .orden-documento {
+        border: none;
+        padding: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .orden-formal-container {
+        max-height: 95vh;
+        max-width: 100%;
+    }
+
+    .orden-formal-content {
+        padding: 1.5rem;
+    }
+
+    .documento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .detalles-banco-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documento-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .documento-numero {
+        text-align: left;
+        align-self: flex-start;
+    }
+
+    .orden-formal-footer {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+
+    .orden-formal-footer .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .orden-formal-header {
+        padding: 1.5rem;
+    }
+
+    .orden-formal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .documento-numero-valor {
+        font-size: 1.3rem;
+    }
+
+    .documento-seccion-titulo {
+        font-size: 0.95rem;
+    }
+
+    .documento-tabla {
+        font-size: 0.85rem;
+    }
+
+    .documento-tabla th,
+    .documento-tabla td {
+        padding: 0.5rem;
+    }
+}

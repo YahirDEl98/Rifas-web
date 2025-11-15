@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test RifaPlus</title>
+</head>
+<body>
+    <h1>Test de Función calcularDescuento</h1>
+    <div id="results"></div>
+    
+    <script>
+        // Copiar la función desde main.js
+        window.rifaplusUtils = {
+            calcularDescuento: function(cantidad, precioUnitario = 50) {
+                let totalFinal = 0;
+                let descuentoMonto = 0;
+                let boletosRestantes = cantidad;
+                
+                // Aplicar paquete de 20
+                if (boletosRestantes >= 20) {
+                    const paquetes20 = Math.floor(boletosRestantes / 20);
+                    totalFinal += paquetes20 * 800;
+                    descuentoMonto += paquetes20 * (20 * precioUnitario - 800);
+                    boletosRestantes -= paquetes20 * 20;
+                }
+                
+                // Aplicar paquete de 10
+                if (boletosRestantes >= 10) {
+                    totalFinal += 450;
+                    descuentoMonto += (10 * precioUnitario - 450);
+                    boletosRestantes -= 10;
+                }
+                
+                // Agregar boletos sueltos
+                totalFinal += boletosRestantes * precioUnitario;
+                
+                return {
+                    cantidadBoletos: cantidad,
+                    precioUnitario: precioUnitario,
+                    subtotal: cantidad * precioUnitario,
+                    descuentoMonto: descuentoMonto,
+                    totalFinal: totalFinal
+                };
+            }
+        };
+        
+        // Test
+        const results = document.getElementById('results');
+        const casos = [
+            { qty: 10, expected: 450 },
+            { qty: 11, expected: 500 },
+            { qty: 20, expected: 800 },
+            { qty: 21, expected: 850 }
+        ];
+        
+        casos.forEach(caso => {
+            const result = window.rifaplusUtils.calcularDescuento(caso.qty);
+            const pass = result.totalFinal === caso.expected;
+            const status = pass ? '✅ PASS' : '❌ FAIL';
+            results.innerHTML += `<p>${status}: ${caso.qty} boletos = $${result.totalFinal} (esperado: $${caso.expected})</p>`;
+        });
+    </script>
+</body>
+</html>

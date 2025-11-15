@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Boletos - RifaPlus iPhone 15 Pro Max</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal-contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER CON MENÚ -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🎯</span>
+                    <h1 class="logo-text">RifaPlus</h1>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="compra.html" class="nav-link active">Comprar</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="mis-boletos.html" class="nav-link">Mis Boletos</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="carrito-nav" id="carritoNav" aria-label="Carrito de compras">
+                    <span class="carrito-icon" aria-hidden="true">🛒</span>
+                    <span class="carrito-count">0</span>
+                    <span class="sr-only">0 items en el carrito</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-menu" id="overlayMenu" aria-hidden="true">
+            <div class="overlay-inner">
+                <button class="overlay-close" id="overlayClose" aria-label="Cerrar menú">×</button>
+                <a href="index.html" class="overlay-link">Inicio</a>
+                <a href="compra.html" class="overlay-link">Comprar</a>
+                <a href="#faq" class="overlay-link">FAQ</a>
+                <a href="mis-boletos.html" class="overlay-link">Mis Boletos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO COMPRAR (nuevo, tono morado invitante) -->
+    <section class="compra-hero compra-hero--purple">
+        <div class="container">
+            <div class="compra-hero-inner">
+                <h1 class="compra-hero-title">¿Listo para ganar? Elige tus boletos y participa ahora</h1>
+                <p class="compra-hero-sub">Selecciona los boletos que quieras o deja que la máquina de la suerte elija por ti. ¡Suerte y buena vibra!</p>
+                <div class="compra-hero-cta">
+                    <a href="#numerosGrid" class="btn btn-primary">Seleccionar Boletos</a>
+                    <button id="btnProbarMaquina" class="btn btn-secondary btn-probar-maquina">🎰 Probar la Máquina</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN PRINCIPAL DE COMPRA: precio, promociones, máquina y selección -->
+    <section class="compra-pricing-section">
+        <div class="container">
+            <div class="precio-card-main">
+                <h3>Costo del boleto</h3>
+                <div class="precio-big">$50 <span class="precio-label">por boleto</span></div>
+            </div>
+            <div class="promociones-header">
+                <h3 class="promociones-title">Promociones</h3>
+                <p class="promociones-sub">Aprovecha los paquetes y ahorra al comprar varios boletos</p>
+            </div>
+
+            <div class="promos-cards">
+                <div class="promo-card">
+                    <p class="promo-simple">10 boletos × $450</p>
+                </div>
+
+                <div class="promo-card">
+                    <p class="promo-simple">20 boletos × $800</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MÁQUINA DE LA SUERTE (diseño similar a la imagen) -->
+<section class="maquina-section" id="maquinaCard">
+    <div class="container">
+        <div class="maquina-card">
+            <div class="maquina-header">
+                <h3>🎰 Máquina de la Suerte</h3>
+                <p class="maquina-sub">Te elegimos números al azar — selección automática</p>
+            </div>
+
+            <div class="maquina-controls-mejorada">
+                <div class="cantidad-control">
+                    <label for="cantidadNumeros">¿Cuántos números quieres?</label>
+                    <div class="number-selector">
+                        <button type="button" class="number-btn" id="disminuirCantidad">-</button>
+                        <input type="number" id="cantidadNumeros" value="0" min="0" max="500" step="1" inputmode="numeric" class="number-input">
+                        <button type="button" class="number-btn" id="aumentarCantidad">+</button>
+                    </div>
+                </div>
+
+                <div class="total-section">
+                    <div class="total-label">Total:</div>
+                    <div class="total-amount" id="totalMaquina">$0.00</div>
+                </div>
+
+                     <button class="btn btn-primary btn-generar" id="btnGenerarNumeros" disabled>
+                         GENERAR NÚMEROS
+                     </button>
+            </div>
+
+                <div class="maquina-resultado" id="maquinaResultado" style="display:none;">
+                    <h4>🎉 Números generados:</h4>
+                    <div class="generated-row" id="numerosSuerte"></div>
+                    <div class="generated-actions">
+                        <button class="btn btn-outline" id="btnRepetir">Repetir</button>
+                        <button class="btn btn-success" id="btnAgregarSuerte">Los quiero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELECCIONA TU BOLETO -->
+    <section class="seleccion-section">
+        <div class="container">
+            <h3 class="section-title">Selecciona el boleto de tu preferencia</h3>
+
+            <!-- Leyenda de estados -->
+            <div class="leyenda-estados">
+                <div class="leyenda-item">
+                    <span class="leyenda-color disponible"></span>
+                    <span>Disponible</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="leyenda-color seleccionado"></span>
+                    <span>Seleccionado</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="leyenda-color apartado"></span>
+                    <span>Apartado</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="leyenda-color vendido"></span>
+                    <span>Vendido</span>
+                </div>
+            </div>
+
+            <div class="rango-boxes" id="rangoBoxes">
+                <!-- Generado dinámicamente por JavaScript basándose en totalTickets -->
+            </div>
+
+            <div class="numeros-grid" id="numerosGrid">
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUMEN DE COMPRA -->
+    <section class="resumen-section">
+        <div class="container">
+            <div class="resumen-card">
+                <h3>🛒 Resumen de tu compra</h3>
+                
+                <div class="resumen-content">
+                    <div class="resumen-item">
+                        <span class="resumen-label">Cantidad de boletos:</span>
+                        <span class="resumen-value" id="cantidadBoletos">0</span>
+                    </div>
+                    
+                    <div class="resumen-item">
+                        <span class="resumen-label">Números seleccionados:</span>
+                        <div class="resumen-value" id="numerosSeleccionados">
+                            <p class="sin-seleccion">Aún no has seleccionado ningún boleto</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resumen-item">
+                        <span class="resumen-label">Descuento aplicado:</span>
+                        <span class="resumen-value descuento" id="descuentoAplicado">$0</span>
+                    </div>
+                    
+                    <div class="resumen-total">
+                        <span class="total-label">Total a pagar:</span>
+                        <span class="total-amount" id="totalPagar">$0</span>
+                    </div>
+                </div>
+                
+                <div class="resumen-actions">
+                    <button class="btn btn-success btn-lg" id="btnComprar" disabled>
+                        <i class="fas fa-shopping-cart"></i> Proceder al pago
+                    </button>
+                    <button class="btn btn-outline" id="btnLimpiar">
+                        <i class="fas fa-trash"></i> Limpiar selección
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="footer-logo-icon">🎯</span>
+                        <h3>RifaPlus</h3>
+                    </div>
+                    <p class="footer-description">La mejor plataforma para rifas en línea. Transparencia, seguridad y emoción garantizada.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/MiRifaOficial" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/MiRifaOficial" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="compra.html">Comprar Boletos</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="mis-boletos.html">Mis Boletos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terminos">Términos y Condiciones</a></li>
+                        <li><a href="#privacidad">Política de Privacidad</a></li>
+                        <li><a href="#cookies">Política de Cookies</a></li>
+                        <li><a href="#soporte">Contacto y Soporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:contacto@mirifa.com">contacto@mirifa.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+525512345678">+52 55-1234-5678</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> México</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p>&copy; 2024 <strong>RifaPlus</strong>. Todos los derechos reservados. | Diseñado con ❤️ para ti</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL FORMULARIO DE CONTACTO -->
+    <div class="modal modal-overlay" id="modalContacto">
+        <div class="modal-content modal-contacto">
+            <div class="modal-header">
+                <h2>📋 Completa tus datos</h2>
+                <button class="modal-close" id="closeContacto" aria-label="Cerrar">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="formularioContacto" novalidate>
+                    <div class="form-group">
+                        <label for="clienteNombre">Nombre *</label>
+                        <input type="text" id="clienteNombre" name="nombre" placeholder="Juan" required maxlength="50">
+                        <span class="form-error" id="errorNombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clienteApellidos">Apellidos *</label>
+                        <input type="text" id="clienteApellidos" name="apellidos" placeholder="García López" required maxlength="50">
+                        <span class="form-error" id="errorApellidos"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clienteWhatsapp">Número WhatsApp *</label>
+                        <input type="tel" id="clienteWhatsapp" name="whatsapp" placeholder="+58 412 123 4567" required maxlength="20">
+                        <span class="form-error" id="errorWhatsapp"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clienteEmail">Email (opcional pero recomendado)</label>
+                        <input type="email" id="clienteEmail" name="email" placeholder="juan@example.com" maxlength="100">
+                        <span class="form-error" id="errorEmail"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer modal-footer-contacto">
+                <button class="btn btn-outline" id="btnCancelarContacto">Cancelar</button>
+                <button class="btn btn-primary" id="btnContinuarContacto">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SELECCIÓN ALEATORIA -->
+    <div class="modal" id="modalAleatorio">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎰 Máquina de la Suerte</h2>
+                <button class="modal-close" id="closeAleatorio">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="maquina-animacion" id="maquinaAnimacion">
+                    <div class="numeros-girando">
+                        <span class="numero-girando">???</span>
+                        <span class="numero-girando">???</span>
+                        <span class="numero-girando">???</span>
+                    </div>
+                </div>
+                <div class="numeros-resultado" id="numerosResultado" style="display: none;">
+                    <h4>¡Tus números de la suerte!</h4>
+                    <div class="numeros-ganadores" id="numerosGanadores"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="btnCancelarAleatorio">Cancelar</button>
+                <button class="btn btn-primary" id="btnConfirmarAleatorio" style="display: none;">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=20251115"></script>
+    <script src="js/modal-contacto.js?v=20251115"></script>
+    <!-- Cache-bust param para forzar recarga después de editar js -->
+    <script src="js/compra.js?v=20251115"></script>
+</body>
+</html>
+

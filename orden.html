@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Orden de Compra - RifaPlus</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/orden.css">
+    <link rel="stylesheet" href="css/orden-formal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER CON MENÚ -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🎯</span>
+                    <h1 class="logo-text">RifaPlus</h1>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="compra.html" class="nav-link">Comprar</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="mis-boletos.html" class="nav-link">Mis Boletos</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="carrito-nav" id="carritoNav" aria-label="Carrito de compras">
+                    <span class="carrito-icon" aria-hidden="true">🛒</span>
+                    <span class="carrito-count">0</span>
+                    <span class="sr-only">0 items en el carrito</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-menu" id="overlayMenu" aria-hidden="true">
+            <div class="overlay-inner">
+                <button class="overlay-close" id="overlayClose" aria-label="Cerrar menú">×</button>
+                <a href="index.html" class="overlay-link">Inicio</a>
+                <a href="compra.html" class="overlay-link">Comprar</a>
+                <a href="#faq" class="overlay-link">FAQ</a>
+                <a href="mis-boletos.html" class="overlay-link">Mis Boletos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO ORDEN -->
+    <section class="orden-hero orden-hero--purple">
+        <div class="container">
+            <div class="orden-hero-inner">
+                <h1 class="orden-hero-title">✅ Tu Orden está lista</h1>
+                <p class="orden-hero-sub">Completa el pago para confirmar tu participación en la rifa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="orden-section">
+        <div class="container">
+            <div class="orden-layout">
+                <!-- Columna izquierda: Resumen de orden -->
+                <div class="orden-resumen">
+                    <!-- Número de orden -->
+                    <div class="orden-id-card">
+                        <div class="orden-id-label">Número de Orden</div>
+                        <div class="orden-id-numero" id="ordenNumero">RIFA-00001</div>
+                        <div class="orden-id-fecha" id="ordenFecha">Generada hace unos momentos</div>
+                    </div>
+
+                    <!-- Datos del cliente -->
+                    <div class="orden-section-card">
+                        <h3 class="orden-section-title">📋 Datos del Cliente</h3>
+                        <div class="orden-client-info">
+                            <div class="info-item">
+                                <span class="info-label">Nombre:</span>
+                                <span class="info-value" id="clienteNombreOrden">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Apellidos:</span>
+                                <span class="info-value" id="clienteApellidosOrden">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">WhatsApp:</span>
+                                <span class="info-value" id="clienteWhatsappOrden">-</span>
+                            </div>
+                            <button class="btn btn-outline btn-sm" id="btnEditarCliente">
+                                <i class="fas fa-edit"></i> Editar datos
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Boletos comprados -->
+                    <div class="orden-section-card">
+                        <h3 class="orden-section-title">🎫 Boletos Seleccionados</h3>
+                        <div class="boletos-lista" id="boletos-lista">
+                            <!-- Se llenan dinámicamente -->
+                        </div>
+                        <div class="boletos-resumen">
+                            <div class="resumen-item">
+                                <span class="resumen-label">Cantidad de boletos:</span>
+                                <span class="resumen-value" id="cantidadBoletosOrden">0</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span class="resumen-label">Descuento aplicado:</span>
+                                <span class="resumen-value descuento" id="descuentoOrden">$0</span>
+                            </div>
+                            <div class="resumen-total">
+                                <span class="total-label">Total a pagar:</span>
+                                <span class="total-amount" id="totalOrden">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: Métodos de pago -->
+                <div class="orden-pagos">
+                    <h3 class="orden-section-title">💳 Selecciona Forma de Pago</h3>
+                    <p class="pagos-subtitle">Elige la cuenta a la que deseas transferir</p>
+
+                    <div class="pagos-grid" id="pagosGrid">
+                        <!-- Se llenan dinámicamente con las cuentas bancarias -->
+                    </div>
+
+                    <!-- Resumen de pago seleccionado -->
+                    <div class="pago-seleccionado" id="pagoSeleccionado" style="display: none;">
+                        <h4>Detalles de transferencia</h4>
+                        <div class="pago-detalle">
+                            <div class="detalle-item">
+                                <span class="detalle-label">Banco:</span>
+                                <span class="detalle-valor" id="detalleBanco">-</span>
+                            </div>
+                            <div class="detalle-item">
+                                <span class="detalle-label">Beneficiario:</span>
+                                <span class="detalle-valor" id="detalleBeneficiario">-</span>
+                            </div>
+                            <div class="detalle-item">
+                                <span class="detalle-label">Tipo de cuenta:</span>
+                                <span class="detalle-valor" id="detalletipo">-</span>
+                            </div>
+                            <div class="detalle-item detalle-cuenta">
+                                <span class="detalle-label">Número de cuenta:</span>
+                                <span class="detalle-valor" id="detalleCuenta">-</span>
+                                <button class="btn-copiar" id="btnCopiarCuenta" title="Copiar número">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="detalle-item detalle-referencia">
+                                <span class="detalle-label">Referencia (Monto + referencia):</span>
+                                <span class="detalle-valor" id="detalleReferencia">-</span>
+                                <button class="btn-copiar" id="btnCopiarReferencia" title="Copiar referencia">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="detalle-item">
+                                <span class="detalle-label">Teléfono contacto:</span>
+                                <span class="detalle-valor" id="detalleTelefono">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="orden-acciones">
+                        <button class="btn btn-success btn-lg" id="btnGenerarOrden" disabled>
+                            <i class="fas fa-file-invoice"></i> Generar Orden
+                        </button>
+                        <a href="compra.html" class="btn btn-outline btn-lg">
+                            ← Volver a Comprar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RifaPlus</h3>
+                    <p>Tu plataforma de rifas online</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rápidos enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="compra.html">Comprar</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RifaPlus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL ORDEN FORMAL -->
+    <div class="modal-orden-formal" id="modalOrdenFormal">
+        <div class="orden-formal-container">
+            <div class="orden-formal-header">
+                <h2>📄 Orden de Pago</h2>
+                <button class="modal-close" id="closeOrdenFormal" aria-label="Cerrar">×</button>
+            </div>
+            <div class="orden-formal-content">
+                <div id="contenidoOrdenFormal">
+                    <!-- Se llena dinámicamente con JavaScript -->
+                </div>
+            </div>
+            <div class="orden-formal-footer">
+                <button class="btn btn-outline" id="btnCancelarOrdenFormal">Cancelar</button>
+                <button class="btn btn-primary" id="btnContinuarOrdenFormal">
+                    <i class="fas fa-paper-plane"></i> Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=20251115"></script>
+    <script src="js/orden.js?v=20251115"></script>
+    <script src="js/orden-formal.js?v=20251115"></script>
+</body>
+</html>
