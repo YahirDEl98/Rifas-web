@@ -120,11 +120,11 @@ function renderizarOrdenFormal(orden) {
                         ${filasboletos}
                         <tr class="documento-tabla-total">
                             <td colspan="2">Subtotal (${orden.boletos.length} boletos)</td>
-                            <td>$${(orden.totales.total || 0).toFixed(2)}</td>
+                            <td>$${(orden.totales.subtotal || 0).toFixed(2)}</td>
                         </tr>
                         ${orden.totales.descuento > 0 ? `
                         <tr class="documento-tabla-total">
-                            <td colspan="2">Descuento (${orden.totales.descuento >= orden.totales.total * 0.2 ? '20%' : '10%'})</td>
+                            <td colspan="2">Descuento (${orden.totales.descuento >= (orden.totales.subtotal || 0) * 0.2 ? '20%' : '10%'})</td>
                             <td>-$${orden.totales.descuento.toFixed(2)}</td>
                         </tr>
                         ` : ''}
@@ -202,7 +202,7 @@ async function enviarOrdenPorWhatsApp() {
         const cliente = ord.cliente || {};
         const ordenId = ord.ordenId || '';
         const banco = ord.cuenta ? ord.cuenta.bank : '';
-        const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.total || 0) : 0;
+        const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.subtotal || 0) : 0;
         const lines = [
             '🎯 ORDEN DE PAGO - RIFA',
             `Orden: ${ordenId}`,
@@ -279,7 +279,7 @@ async function enviarOrdenPorWhatsApp() {
                     const cliente = ord.cliente || {};
                     const ordenId = ord.ordenId || '';
                     const banco = ord.cuenta ? ord.cuenta.bank : '';
-                    const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.total || 0) : 0;
+                    const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.subtotal || 0) : 0;
                     const cantidadBoletos = (ord.boletos || []).length;
                     const clienteWhatsapp = cliente.whatsapp || 'N/A';
                     

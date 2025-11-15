@@ -141,3 +141,14 @@
 ::1 - - [15/Nov/2025 17:44:35] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
 ::1 - - [15/Nov/2025 17:44:35] "GET /css/orden-formal.css HTTP/1.1" 200 -
 ::1 - - [15/Nov/2025 17:44:35] "GET /css/orden.css HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:47] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:51] "GET /orden.html HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:51] "GET /css/orden.css HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:51] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:51] "GET /css/orden-formal.css HTTP/1.1" 200 -
+::1 - - [15/Nov/2025 17:46:51] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -

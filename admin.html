@@ -513,7 +513,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Total:</span>
-                            <span class="detail-value">$${orden.totales.totalFinal || orden.totales.total || 0}</span>
+                            <span class="detail-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Banco:</span>
@@ -600,7 +600,7 @@
                     </div>
                     <div>
                         <div class="detail-item-label">Monto Total</div>
-                        <div class="detail-item-value">$${orden.totales.totalFinal || orden.totales.total || 0}</div>
+                        <div class="detail-item-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</div>
                     </div>
                 </div>
                 <div class="order-detail-row">
@@ -669,7 +669,7 @@
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Total:</span>
-                                <span class="detail-value">$${orden.totales.totalFinal || orden.totales.total || 0}</span>
+                                <span class="detail-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Banco:</span>
@@ -696,7 +696,7 @@
             let csv = 'Orden ID,Cliente,WhatsApp,Boletos,Total,Banco,Estado,Fecha\n';
             ordenes.forEach(orden => {
                 const fecha = new Date(orden.fecha).toLocaleDateString('es-MX');
-                csv += `${orden.ordenId},"${orden.cliente.nombre} ${orden.cliente.apellidos}",${orden.cliente.whatsapp},${orden.boletos.length},$${orden.totales.totalFinal || orden.totales.total},${orden.cuenta.bank},${orden.estado || 'Pendiente'},${fecha}\n`;
+                csv += `${orden.ordenId},"${orden.cliente.nombre} ${orden.cliente.apellidos}",${orden.cliente.whatsapp},${orden.boletos.length},$${orden.totales.totalFinal || orden.totales.subtotal},${orden.cuenta.bank},${orden.estado || 'Pendiente'},${fecha}\n`;
             });
 
             const blob = new Blob([csv], { type: 'text/csv' });
