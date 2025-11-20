@@ -313,7 +313,8 @@ app.post('/api/ordenes', limiterOrdenes, async (req, res) => {
         if (nombre.length === 0) {
             return res.status(400).json({ success: false, message: 'Nombre del cliente requerido' });
         }
-        if (email.length === 0 || !esEmailValido(email)) {
+        // Email ahora opcional: sólo validar si fue provisto
+        if (email && !esEmailValido(email)) {
             return res.status(400).json({ success: false, message: 'Email inválido' });
         }
         if (!esTelefonoValido(whatsapp)) {
