@@ -45,8 +45,15 @@
 
 .orden-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Single flexible column that expands to available width so content adapts
+       fluidly on large screens. If you later reintroduce a right column,
+       change this to a two-column layout in a media query. */
+    grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    justify-items: stretch;
 }
 
 /* Resumen de orden (izquierda) */
@@ -54,6 +61,9 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
+    max-width: none; /* allow content to expand to available width */
+    margin: 0;
 }
 
 /* Tarjeta de ID de orden */
@@ -377,6 +387,7 @@
 @media (max-width: 1024px) {
     .orden-layout {
         grid-template-columns: 1fr;
+        justify-items: stretch;
     }
 
     .orden-pagos {

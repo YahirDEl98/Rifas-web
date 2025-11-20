@@ -96,9 +96,14 @@
                                 <span class="info-label">WhatsApp:</span>
                                 <span class="info-value" id="clienteWhatsappOrden">-</span>
                             </div>
-                            <button class="btn btn-outline btn-sm" id="btnEditarCliente">
-                                <i class="fas fa-edit"></i> Editar datos
-                            </button>
+                            <div class="info-item">
+                                <span class="info-label">Estado:</span>
+                                <span class="info-value" id="clienteEstadoOrden">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Localidad:</span>
+                                <span class="info-value" id="clienteCiudadOrden">-</span>
+                            </div>
                         </div>
                     </div>
 
@@ -121,66 +126,38 @@
                                 <span class="total-label">Total a pagar:</span>
                                 <span class="total-amount" id="totalOrden">$0</span>
                             </div>
+                        
+                        <div style="margin-top:0.75rem;">
+                            <button class="btn btn-outline" id="btnSeleccionarCuenta">Selecciona la cuenta de pago</button>
+                        </div>
+
+                        <div id="cuentaResumenLeft" style="margin-top:0.75rem; display:none; border-left:3px solid var(--border-color); padding-left:0.75rem;">
+                            <div style="font-weight:600;">Cuenta seleccionada</div>
+                            <div class="info-item"><span class="info-label">Banco:</span> <span id="leftBanco">-</span></div>
+                            <div class="info-item"><span class="info-label">Beneficiario:</span> <span id="leftBeneficiario">-</span></div>
+                            <div class="info-item"><span class="info-label">Cuenta:</span> <span id="leftCuenta">-</span></div>
+                        </div>
+                        
+                        <!-- Acciones: confirmar datos, generar y cancelar orden -->
+                        <div class="orden-acciones-left" style="margin-top:1rem;">
+                            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+                                <input type="checkbox" id="confirmDatos" />
+                                <label for="confirmDatos">Mis datos son correctos</label>
+                            </div>
+
+                            <button class="btn btn-success btn-lg" id="btnGenerarOrden" disabled style="display:block; width:100%;">
+                                <i class="fas fa-file-invoice"></i> Generar Orden
+                            </button>
+
+                            <button class="btn btn-outline btn-lg" id="btnCancelarOrden" style="display:block; margin-top:0.5rem; width:100%;">
+                                Cancelar Orden
+                            </button>
+                        </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Columna derecha: Métodos de pago -->
-                <div class="orden-pagos">
-                    <h3 class="orden-section-title">💳 Selecciona Forma de Pago</h3>
-                    <p class="pagos-subtitle">Elige la cuenta a la que deseas transferir</p>
-
-                    <div class="pagos-grid" id="pagosGrid">
-                        <!-- Se llenan dinámicamente con las cuentas bancarias -->
-                    </div>
-
-                    <!-- Resumen de pago seleccionado -->
-                    <div class="pago-seleccionado" id="pagoSeleccionado" style="display: none;">
-                        <h4>Detalles de transferencia</h4>
-                        <div class="pago-detalle">
-                            <div class="detalle-item">
-                                <span class="detalle-label">Banco:</span>
-                                <span class="detalle-valor" id="detalleBanco">-</span>
-                            </div>
-                            <div class="detalle-item">
-                                <span class="detalle-label">Beneficiario:</span>
-                                <span class="detalle-valor" id="detalleBeneficiario">-</span>
-                            </div>
-                            <div class="detalle-item">
-                                <span class="detalle-label">Tipo de cuenta:</span>
-                                <span class="detalle-valor" id="detalletipo">-</span>
-                            </div>
-                            <div class="detalle-item detalle-cuenta">
-                                <span class="detalle-label">Número de cuenta:</span>
-                                <span class="detalle-valor" id="detalleCuenta">-</span>
-                                <button class="btn-copiar" id="btnCopiarCuenta" title="Copiar número">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="detalle-item detalle-referencia">
-                                <span class="detalle-label">Referencia (Monto + referencia):</span>
-                                <span class="detalle-valor" id="detalleReferencia">-</span>
-                                <button class="btn-copiar" id="btnCopiarReferencia" title="Copiar referencia">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="detalle-item">
-                                <span class="detalle-label">Teléfono contacto:</span>
-                                <span class="detalle-valor" id="detalleTelefono">-</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Acciones -->
-                    <div class="orden-acciones">
-                        <button class="btn btn-success btn-lg" id="btnGenerarOrden" disabled>
-                            <i class="fas fa-file-invoice"></i> Generar Orden
-                        </button>
-                        <a href="compra.html" class="btn btn-outline btn-lg">
-                            ← Volver a Comprar
-                        </a>
-                    </div>
-                </div>
+                <!-- Columna derecha eliminada: ahora la selección de cuenta se hace mediante modal flotante -->
             </div>
         </div>
     </section>
@@ -228,7 +205,9 @@
                 </div>
             </div>
             <div class="orden-formal-footer">
-                <button class="btn btn-outline" id="btnCancelarOrdenFormal">Cancelar</button>
+                <button class="btn btn-secondary" id="btnDescargarOrdenFormal">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
                 <button class="btn btn-primary" id="btnContinuarOrdenFormal">
                     <i class="fas fa-paper-plane"></i> Continuar
                 </button>
@@ -236,6 +215,28 @@
         </div>
     </div>
 
+    <!-- MODAL SELECCIONAR CUENTA -->
+    <div class="modal-overlay" id="modalSeleccionCuenta" style="display:none;">
+        <div class="modal-contacto modal-contacto--small" role="dialog" aria-modal="true">
+            <div class="modal-header">
+                <h2>Selecciona la cuenta de pago</h2>
+                <button class="modal-close" id="closeModalSeleccionCuenta" aria-label="Cerrar">×</button>
+            </div>
+            <div class="modal-body" style="padding:1rem;">
+                <div id="cuentasLista">
+                    <!-- cuentas se inyectan aquí -->
+                </div>
+            </div>
+            <div class="modal-footer-contacto" style="justify-content:flex-end;">
+                <!-- Close button removed as requested. Use the × button in the header to close. -->
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF generation dependencies -->
+    <!-- PDF generation dependencies: deben ir antes de los scripts principales -->
+    <script src="js/vendor/html2canvas.min.js?v=20251115"></script>
+    <script src="js/vendor/jspdf.umd.min.js?v=20251115"></script>
     <script src="js/main.js?v=20251115"></script>
     <script src="js/orden.js?v=20251115"></script>
     <script src="js/orden-formal.js?v=20251115"></script>

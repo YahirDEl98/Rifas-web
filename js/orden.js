@@ -1,5 +1,4 @@
 // orden.js - Gestión de la página de orden con métodos de pago
-
 let cuentaSeleccionada = null;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,6 +22,11 @@ function cargarOrden() {
     document.getElementById('clienteNombreOrden').textContent = cliente.nombre || '-';
     document.getElementById('clienteApellidosOrden').textContent = cliente.apellidos || '-';
     document.getElementById('clienteWhatsappOrden').textContent = cliente.whatsapp || '-';
+    // Estado y ciudad (agregados recientemente)
+    const estadoEl = document.getElementById('clienteEstadoOrden');
+    if (estadoEl) estadoEl.textContent = cliente.estado || '-';
+    const ciudadEl = document.getElementById('clienteCiudadOrden');
+    if (ciudadEl) ciudadEl.textContent = cliente.ciudad || '-';
     
     // Calcular fecha en formato legible
     if (cliente.fecha) {
@@ -80,25 +84,8 @@ function cargarBoletos(boletos) {
 }
 
 function inicializarMetodosPago() {
-    const pagosGrid = document.getElementById('pagosGrid');
-    const cuentas = window.rifaplusConfig.bankAccounts || [];
-    
-    pagosGrid.innerHTML = '';
-    
-    cuentas.forEach(cuenta => {
-        const card = document.createElement('div');
-        card.className = 'pago-card';
-        card.innerHTML = `
-            <div class="pago-bank-name">${cuenta.bank}</div>
-            <div class="pago-beneficiary">${cuenta.beneficiary}</div>
-        `;
-        
-        card.addEventListener('click', function() {
-            seleccionarCuenta(cuenta, card);
-        });
-        
-        pagosGrid.appendChild(card);
-    });
+    // Now handled by modal when opened. Keep function for compatibility.
+    return;
 }
 
 function seleccionarCuenta(cuenta, elemento) {
@@ -115,55 +102,43 @@ function seleccionarCuenta(cuenta, elemento) {
     mostrarDetallesPago(cuenta);
     
     // Habilitar botón generar orden
-    document.getElementById('btnGenerarOrden').disabled = false;
+    // Enable generation only if the user confirmed their data (checkbox)
+    const checkbox = document.getElementById('confirmDatos');
+    const generarBtn = document.getElementById('btnGenerarOrden');
+    if (generarBtn) {
+        generarBtn.disabled = !(checkbox && checkbox.checked);
+    }
+
+    // Update left summary with selected account
+    const leftContainer = document.getElementById('cuentaResumenLeft');
+    if (leftContainer) {
+        document.getElementById('leftBanco').textContent = cuenta.bank || '-';
+        document.getElementById('leftBeneficiario').textContent = cuenta.beneficiary || '-';
+        document.getElementById('leftCuenta').textContent = cuenta.accountNumber || '-';
+        leftContainer.style.display = 'block';
+    }
 }
 
 function mostrarDetallesPago(cuenta) {
-    const pagoSeleccionado = document.getElementById('pagoSeleccionado');
-    
-    // Obtener datos de la orden
-    const totales = JSON.parse(localStorage.getItem('rifaplus_total') || '{}');
+    // Store selected account and reference so it can be included in the order summary
+    try {
+        localStorage.setItem('rifaplus_selected_account', JSON.stringify(cuenta));
+    } catch (e) {}
     const cliente = JSON.parse(localStorage.getItem('rifaplus_cliente') || '{}');
-    const totalFinal = totales.totalFinal || 0;
-    
-    // Llenar detalles
-    document.getElementById('detalleBanco').textContent = cuenta.bank;
-    document.getElementById('detalleBeneficiario').textContent = cuenta.beneficiary;
-    document.getElementById('detalletipo').textContent = cuenta.accountType;
-    document.getElementById('detalleCuenta').textContent = cuenta.accountNumber;
-    document.getElementById('detalleTelefono').textContent = cuenta.phone;
-    
-    // Referencia = sólo el número de orden (ej: RIFA-00001)
-    // Dejamos el monto en el documento pero la referencia principal es el ID
     const referencia = `${cliente.ordenId}`;
-    document.getElementById('detalleReferencia').textContent = referencia;
-    
-    // Guardar referencia en storage (solo el ID de orden)
     localStorage.setItem('rifaplus_referencia', referencia);
-    
-    // Mostrar sección de pago seleccionado
-    pagoSeleccionado.style.display = 'block';
-    
-    // Configurar botones de copiar
-    configurarBotonesCopiar(cuenta.accountNumber, referencia);
+    // UI updates are handled elsewhere (left summary). No right-panel assumed.
 }
 
 function configurarBotonesCopiar(numeroCuenta, referencia) {
+    // Guardado: copiar buttons live only in modal/formal view; these elements may not exist here.
     const btnCopiarCuenta = document.getElementById('btnCopiarCuenta');
     const btnCopiarReferencia = document.getElementById('btnCopiarReferencia');
-    
     if (btnCopiarCuenta) {
-        btnCopiarCuenta.onclick = function(e) {
-            e.preventDefault();
-            copiarAlPortapapeles(numeroCuenta, 'Número de cuenta copiado');
-        };
+        btnCopiarCuenta.onclick = function(e) { e.preventDefault(); copiarAlPortapapeles(numeroCuenta, 'Número de cuenta copiado'); };
     }
-    
     if (btnCopiarReferencia) {
-        btnCopiarReferencia.onclick = function(e) {
-            e.preventDefault();
-            copiarAlPortapapeles(referencia, 'Referencia copiada');
-        };
+        btnCopiarReferencia.onclick = function(e) { e.preventDefault(); copiarAlPortapapeles(referencia, 'Referencia copiada'); };
     }
 }
 
@@ -181,26 +156,205 @@ function copiarAlPortapapeles(texto, mensaje) {
 
 function configurarEventListenersOrden() {
     const btnGenerarOrden = document.getElementById('btnGenerarOrden');
-    const btnEditarCliente = document.getElementById('btnEditarCliente');
     
     if (btnGenerarOrden) {
         btnGenerarOrden.addEventListener('click', function() {
             if (cuentaSeleccionada) {
                 abrirOrdenFormal(cuentaSeleccionada);
+            } else {
+                rifaplusUtils.showFeedback && rifaplusUtils.showFeedback('Selecciona una cuenta de pago primero', 'warning');
             }
         });
     }
     
-    if (btnEditarCliente) {
-        btnEditarCliente.addEventListener('click', function() {
-            // Volver a compra para editar datos
+    // Botón para abrir modal de selección de cuenta (desde la columna izquierda)
+    const btnSeleccionarCuenta = document.getElementById('btnSeleccionarCuenta');
+    if (btnSeleccionarCuenta) {
+        btnSeleccionarCuenta.addEventListener('click', function() {
+            abrirModalSeleccionCuenta();
+        });
+    }
+
+    // Cancelar orden
+    const btnCancelarOrden = document.getElementById('btnCancelarOrden');
+    if (btnCancelarOrden) {
+        btnCancelarOrden.addEventListener('click', function() {
+            // Clear client/order data and go back to compra
+            localStorage.removeItem('rifaplus_cliente');
             window.location.href = 'compra.html';
+        });
+    }
+
+    // Checkbox que confirma datos
+    const confirmDatos = document.getElementById('confirmDatos');
+    if (confirmDatos) {
+        confirmDatos.addEventListener('change', function() {
+            const generarBtn = document.getElementById('btnGenerarOrden');
+            if (generarBtn) {
+                generarBtn.disabled = !(confirmDatos.checked && cuentaSeleccionada);
+            }
         });
     }
     
     // Menu hamburger
     configurarMenuHamburger();
 }
+
+/* Modal de selección de cuenta (izquierda) */
+function abrirModalSeleccionCuenta() {
+    const modal = document.getElementById('modalSeleccionCuenta');
+    if (!modal) return;
+    console.log('[orden] abrirModalSeleccionCuenta called');
+    modal.classList.add('show');
+    // ensure visible if CSS missing — force overlay to top
+    modal.style.position = 'fixed';
+    modal.style.inset = '0';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.background = 'rgba(0,0,0,0.6)';
+    modal.style.zIndex = '10001';
+    document.body.style.overflow = 'hidden';
+
+    // ensure inner modal is on top of overlay and visible
+    const inner = modal.querySelector('.modal-contacto');
+    if (inner) {
+        inner.style.position = 'relative';
+        inner.style.zIndex = '10002';
+        inner.style.background = 'white';
+        inner.style.boxShadow = '0 30px 80px rgba(0,0,0,0.45)';
+    }
+    // Renderizar cuentas
+    const cuentas = window.rifaplusConfig.bankAccounts || [];
+    const lista = document.getElementById('cuentasLista');
+    if (!lista) {
+        console.warn('[orden] cuentasLista not found in DOM');
+        return;
+    }
+    lista.innerHTML = '';
+    cuentas.forEach((c, idx) => {
+        const el = document.createElement('div');
+        el.className = 'pago-card';
+        el.style.cursor = 'pointer';
+        el.style.padding = '0.6rem';
+        el.style.borderBottom = '1px solid var(--border-color)';
+        el.innerHTML = `<div style="font-weight:600">${c.bank}</div><div style="font-size:0.95rem">${c.beneficiary} · ${c.accountNumber}</div>`;
+        el.addEventListener('click', function() {
+            // Seleccionar y cerrar modal
+            seleccionarCuenta(c, el);
+            cerrarModalSeleccionCuenta();
+        });
+        lista.appendChild(el);
+    });
+
+    // Fallback: if modal isn't visible (computed style), create a dynamic simple modal
+    try {
+        const cs = window.getComputedStyle(modal);
+        if (cs.display === 'none' || modal.getBoundingClientRect().height === 0) {
+            console.warn('[orden] modalSeleccionCuenta not visible - using dynamic fallback');
+            crearModalDinamicoSeleccionCuenta(cuentas);
+        }
+    } catch (e) {
+        // ignore
+    }
+}
+
+function crearModalDinamicoSeleccionCuenta(cuentas) {
+    // Remove existing dynamic if present
+    const existing = document.getElementById('modalSeleccionCuentaDynamic');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'modalSeleccionCuentaDynamic';
+    overlay.style.position = 'fixed';
+    overlay.style.inset = '0';
+    overlay.style.background = 'rgba(0,0,0,0.6)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '99999';
+
+    const box = document.createElement('div');
+    box.style.background = '#fff';
+    box.style.borderRadius = '12px';
+    box.style.width = 'min(520px, 92vw)';
+    box.style.maxHeight = '80vh';
+    box.style.overflowY = 'auto';
+    box.style.padding = '0.75rem';
+
+    const header = document.createElement('div');
+    header.style.display = 'flex';
+    header.style.justifyContent = 'space-between';
+    header.style.alignItems = 'center';
+    header.style.marginBottom = '0.5rem';
+
+    const title = document.createElement('div');
+    title.style.fontWeight = '700';
+    title.textContent = 'Selecciona la cuenta de pago';
+    header.appendChild(title);
+
+    const btnX = document.createElement('button');
+    btnX.setAttribute('aria-label', 'Cerrar');
+    btnX.textContent = '×';
+    btnX.style.fontSize = '20px';
+    btnX.style.background = 'transparent';
+    btnX.style.border = 'none';
+    btnX.style.cursor = 'pointer';
+    btnX.addEventListener('click', function() {
+        overlay.remove();
+        document.body.style.overflow = 'auto';
+    });
+    header.appendChild(btnX);
+
+    box.appendChild(header);
+
+    if (!cuentas || cuentas.length === 0) {
+        const p = document.createElement('div');
+        p.textContent = 'No hay cuentas registradas.';
+        box.appendChild(p);
+    } else {
+        cuentas.forEach(c => {
+            const row = document.createElement('div');
+            row.style.padding = '0.6rem';
+            row.style.borderBottom = '1px solid #eee';
+            row.style.cursor = 'pointer';
+            row.innerHTML = `<div style="font-weight:600">${c.bank}</div><div style="font-size:0.95rem">${c.beneficiary} · ${c.accountNumber}</div>`;
+            row.addEventListener('click', function() {
+                seleccionarCuenta(c, row);
+                overlay.remove();
+                document.body.style.overflow = 'auto';
+            });
+            box.appendChild(row);
+        });
+    }
+
+    // No footer close button by design — modal must be closed via the X or by selecting an account
+
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalSeleccionCuenta() {
+    const modal = document.getElementById('modalSeleccionCuenta');
+    if (!modal) return;
+    modal.classList.remove('show');
+    // also hide if CSS not applied
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Configurar botones del modal de selección (attach inmediatamente)
+(function setupModalSeleccionHandlers() {
+    const closeSel = document.getElementById('closeModalSeleccionCuenta');
+    const cancelSel = document.getElementById('btnCancelarSeleccionCuenta');
+    const overlaySel = document.getElementById('modalSeleccionCuenta');
+    if (closeSel) closeSel.addEventListener('click', cerrarModalSeleccionCuenta);
+    if (cancelSel) cancelSel.addEventListener('click', cerrarModalSeleccionCuenta);
+    if (overlaySel) overlaySel.addEventListener('click', function(e) {
+        if (e.target === overlaySel) cerrarModalSeleccionCuenta();
+    });
+})();
 
 function confirmarPago() {
     const cliente = JSON.parse(localStorage.getItem('rifaplus_cliente') || '{}');
@@ -213,7 +367,9 @@ function confirmarPago() {
         cliente: {
             nombre: cliente.nombre,
             apellidos: cliente.apellidos,
-            whatsapp: cliente.whatsapp
+            whatsapp: cliente.whatsapp,
+            estado: cliente.estado,
+            ciudad: cliente.ciudad
         },
         cuenta: {
             bank: cuentaSeleccionada.bank,

@@ -84,9 +84,44 @@ function validarFormularioContacto() {
 }
 
 function generarIdOrden() {
-    // Generar ID único usando timestamp (garantiza unicidad y evita duplicados)
-    const timestamp = Date.now();
-    const id = `RIFA-${timestamp}`;
+    // Generar ID único usando UUIDv4 y evitar duplicados mediante registro en localStorage
+    function uuidv4() {
+        // simple UUIDv4 generator
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    const usedKey = 'rifaplus_used_order_ids';
+    let used = [];
+    try {
+        used = JSON.parse(localStorage.getItem(usedKey) || '[]');
+    } catch (e) {
+        used = [];
+    }
+
+    let id;
+    let attempts = 0;
+    do {
+        id = `RIFA-${uuidv4().toUpperCase().slice(0, 8)}`; // shorter, readable token
+        attempts++;
+        if (attempts > 10) {
+            // fallback to timestamp-based if extremely unlucky
+            id = `RIFA-${Date.now()}-${Math.floor(Math.random()*1000)}`;
+            break;
+        }
+    } while (used.includes(id));
+
+    // Register as used
+    used.push(id);
+    try {
+        localStorage.setItem(usedKey, JSON.stringify(used));
+    } catch (e) {
+        // ignore storage errors
+    }
+
     return id;
 }
 
