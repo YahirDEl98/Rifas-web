@@ -690,6 +690,87 @@ app.get('/api/ordenes', verificarToken, async (req, res) => {
 });
 
 /**
+ * GET /api/public/ordenes-stats
+ * Estadísticas públicas de órdenes (SIN autenticación)
+ * Usado por el countdown para mostrar progreso de venta
+ */
+app.get('/api/public/ordenes-stats', async (req, res) => {
+    try {
+        // Obtener solo órdenes confirmadas y completadas (boletos vendidos)
+        const stats = await db('ordenes')
+            .whereIn('estado', ['confirmada', 'completada'])
+            .select(
+                db.raw('COUNT(*) as total_ordenes'),
+                db.raw('SUM(cantidad_boletos) as total_boletos_vendidos')
+            )
+            .first();
+
+        return res.json({
+            success: true,
+            data: {
+                total_ordenes: stats.total_ordenes || 0,
+                total_boletos_vendidos: stats.total_boletos_vendidos || 0,
+                porcentaje_vendido: 0 // Será calculado en el frontend
+            }
+        });
+    } catch (error) {
+        console.error('GET /api/public/ordenes-stats error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Error al obtener estadísticas',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+});
+
+/**
+ * GET /api/public/boletos
+ * Devuelve listas públicas de boletos: "sold" (confirmada/completada) y "reserved" (pendiente)
+ * Usado por la UI de compra para marcar números reales como vendidos/apartados
+ */
+app.get('/api/public/boletos', async (req, res) => {
+    try {
+        // Pedir todas las órdenes relevantes
+        const ordenesVendidas = await db('ordenes')
+            .whereIn('estado', ['confirmada', 'completada'])
+            .select('boletos');
+
+        const ordenesApartadas = await db('ordenes')
+            .where('estado', 'pendiente')
+            .select('boletos');
+
+        const parseBoletos = rows => {
+            const set = new Set();
+            rows.forEach(r => {
+                try {
+                    const arr = JSON.parse(r.boletos || '[]');
+                    if (Array.isArray(arr)) {
+                        arr.forEach(n => set.add(Number(n)));
+                    }
+                } catch (e) {
+                    // Ignorar filas con JSON inválido
+                }
+            });
+            return Array.from(set).sort((a, b) => a - b);
+        };
+
+        const sold = parseBoletos(ordenesVendidas);
+        const reserved = parseBoletos(ordenesApartadas);
+
+        return res.json({
+            success: true,
+            data: {
+                sold,
+                reserved
+            }
+        });
+    } catch (error) {
+        console.error('GET /api/public/boletos error:', error);
+        return res.status(500).json({ success: false, message: 'Error al obtener boletos', error: process.env.NODE_ENV === 'development' ? error.message : undefined });
+    }
+});
+
+/**
  * GET /api/admin/stats
  * Estadísticas del sistema (protegido con JWT)
  */

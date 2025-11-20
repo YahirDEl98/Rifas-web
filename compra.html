@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar Boletos - RifaPlus iPhone 15 Pro Max</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Comprar Boletos - SORTEOS YEPE iPhone 15 Pro Max</title>
+    <link rel="stylesheet" href="css/styles.css?v=20251119.5">
+    <link rel="icon" href="images/sorteos-yepe-logo.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/sorteos-yepe-logo.png">
     <link rel="stylesheet" href="css/modal-contacto.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/carrito-global.js"></script>
 </head>
 <body>
     <!-- HEADER CON MENÚ -->
     <header class="header">
         <div class="container">
             <div class="header-left">
-                <div class="logo">
-                    <span class="logo-icon" aria-hidden="true">🎯</span>
-                    <h1 class="logo-text">RifaPlus</h1>
-                </div>
-
+                <a href="index.html#top" class="logo" data-logo-src>
+                    <img src="images/sorteos-yepe-logo.png?v=20251117" alt="SORTEOS YEPE" class="logo-image">
+                </a>
                 <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
@@ -60,8 +62,8 @@
                 <h1 class="compra-hero-title">¿Listo para ganar? Elige tus boletos y participa ahora</h1>
                 <p class="compra-hero-sub">Selecciona los boletos que quieras o deja que la máquina de la suerte elija por ti. ¡Suerte y buena vibra!</p>
                 <div class="compra-hero-cta">
-                    <a href="#numerosGrid" class="btn btn-primary">Seleccionar Boletos</a>
-                    <button id="btnProbarMaquina" class="btn btn-secondary btn-probar-maquina">🎰 Probar la Máquina</button>
+                    <a href="#numerosGrid" class="btn">Seleccionar Boletos</a>
+                    <button id="btnProbarMaquina" class="btn selected">Maquina de la Suerte</button>
                 </div>
             </div>
         </div>
@@ -134,6 +136,36 @@
     <section class="seleccion-section">
         <div class="container">
             <h3 class="section-title">Selecciona el boleto de tu preferencia</h3>
+
+            <!-- BARRA DE BÚSQUEDA DE BOLETOS -->
+            <div class="busqueda-boletos-card">
+                <div class="busqueda-input-group">
+                    <label for="busquedaBoleto" class="busqueda-label">🔍 Buscar boleto por número:</label>
+                    <div class="busqueda-wrapper">
+                        <input 
+                            type="number" 
+                            id="busquedaBoleto" 
+                            class="busqueda-input" 
+                            placeholder="Ej: 42" 
+                            min="1"
+                            aria-label="Buscar boleto por número"
+                        >
+                        <button type="button" id="btnBuscarBoleto" class="btn btn-search">
+                            Buscar
+                        </button>
+                        <button type="button" id="btnLimpiarBusqueda" class="btn btn-search-clear" title="Limpiar búsqueda">
+                            ✕
+                        </button>
+                    </div>
+                    <p class="busqueda-rango">Rango de boletos: 1 - <span id="rangoTotal">500</span></p>
+                </div>
+                <div class="busqueda-resultados" id="busquedaResultados" style="display: none;">
+                    <div class="resultados-header">
+                        <strong>Resultados encontrados:</strong>
+                    </div>
+                    <div class="resultados-list" id="resultadosList"></div>
+                </div>
+            </div>
 
             <!-- Leyenda de estados -->
             <div class="leyenda-estados">
@@ -212,8 +244,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <span class="footer-logo-icon">🎯</span>
-                        <h3>RifaPlus</h3>
+                        <img src="images/sorteos-yepe-logo.png?v=20251117" alt="SORTEOS YEPE" class="footer-logo-img" data-logo-src>
                     </div>
                     <p class="footer-description">La mejor plataforma para rifas en línea. Transparencia, seguridad y emoción garantizada.</p>
                     <div class="footer-social">
@@ -255,7 +286,7 @@
 
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
-                <p>&copy; 2024 <strong>RifaPlus</strong>. Todos los derechos reservados. | Diseñado con ❤️ para ti</p>
+                <p>&copy; 2024 <strong>SORTEOS YEPE</strong>. Todos los derechos reservados. | Diseñado con ❤️ para ti</p>
             </div>
         </div>
     </footer>
@@ -291,6 +322,52 @@
                         <label for="clienteEmail">Email (opcional pero recomendado)</label>
                         <input type="email" id="clienteEmail" name="email" placeholder="juan@example.com" maxlength="100">
                         <span class="form-error" id="errorEmail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clienteEstado">Estado *</label>
+                        <select id="clienteEstado" name="estado" required>
+                            <option value="">Seleccionar</option>
+                            <option value="Aguascalientes">Aguascalientes</option>
+                            <option value="Baja California">Baja California</option>
+                            <option value="Baja California Sur">Baja California Sur</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Ciudad de México">Ciudad de México</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="México">México</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">San Luis Potosí</option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                        <span class="form-error" id="errorEstado"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clienteCiudad">Ciudad / Localidad *</label>
+                        <input type="text" id="clienteCiudad" name="ciudad" placeholder="Ej. Guadalajara" required maxlength="80">
+                        <span class="form-error" id="errorCiudad"></span>
                     </div>
                 </form>
             </div>
@@ -332,6 +409,67 @@
     <script src="js/modal-contacto.js?v=20251115"></script>
     <!-- Cache-bust param para forzar recarga después de editar js -->
     <script src="js/compra.js?v=20251115"></script>
+
+    <!-- MODAL CARRITO EXPANDIBLE -->
+    <div class="modal-carrito-overlay" id="carritoModal">
+        <div class="modal-carrito">
+            <div class="modal-carrito-header">
+                <h2>🛒 Tu Carrito</h2>
+                <button class="modal-carrito-close" id="closeCarrito" aria-label="Cerrar carrito">×</button>
+            </div>
+            
+            <div class="modal-carrito-body">
+                <!-- Mensaje si está vacío -->
+                <div class="carrito-vacio" id="carritoVacio">
+                    <div class="carrito-vacio-content">
+                        <p class="carrito-vacio-icon">🎯</p>
+                        <p class="carrito-vacio-titulo">Tu carrito está vacío</p>
+                        <p class="carrito-vacio-subtitulo">¡Comienza a seleccionar tus boletos favoritos!</p>
+                        <button class="btn btn-primary btn-carrito-comprar" id="btnIrAComprar">
+                            🎫 Ir a Comprar Boletos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lista de boletos seleccionados -->
+                <div class="carrito-lista" id="carritoLista" style="display: none;">
+                    <div class="carrito-items" id="carritoItems"></div>
+                </div>
+            </div>
+
+            <div class="modal-carrito-footer" id="carritoFooter" style="display: none;">
+                <div class="carrito-resumen" id="carritoResumen" style="display: none;">
+                    <div class="carrito-resumen-row">
+                        <div class="carrito-resumen-item">
+                            <span>Cantidad de boletos:</span>
+                            <strong id="carritoResumenCantidad">0</strong>
+                        </div>
+                        <button class="btn btn-danger btn-sm" id="btnLimpiarCarrito" title="Eliminar todos los boletos" aria-label="Limpiar carrito">
+                            Limpiar carrito
+                        </button>
+                    </div>
+                    <div class="carrito-resumen-item">
+                        <span>Subtotal:</span>
+                        <strong id="carritoResumenSubtotal">$0</strong>
+                    </div>
+                    <div class="carrito-resumen-item">
+                        <span>Descuento:</span>
+                        <strong id="carritoResumenDescuento">$0</strong>
+                    </div>
+                    <div class="carrito-resumen-total">
+                        <span>Total:</span>
+                        <strong id="carritoResumenTotal">$0</strong>
+                    </div>
+                </div>
+
+                <div class="carrito-acciones">
+                    <button class="btn btn-outline" id="btnSeguirComprando">Seguir comprando</button>
+                    <button class="btn btn-success btn-lg" id="btnProcederCarrito" disabled>Proceder al pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 

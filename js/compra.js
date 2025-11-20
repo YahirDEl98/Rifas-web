@@ -5,6 +5,7 @@ const selectedNumbersGlobal = new Set();
 
 document.addEventListener('DOMContentLoaded', function() {
     initSistemaCompra();
+    // Carrito será inicializado por carrito-global.js
 });
 
 function initSistemaCompra() {
@@ -17,6 +18,42 @@ function initSistemaCompra() {
     inicializarRangoDefault();
     configurarEventListeners();
     inicializarMaquinaSuerteMejorada();
+    // Cargar datos reales de boletos vendidos/apartados
+    fetchBoletosPublic();
+    // Actualizar cada 10 segundos para reflejar cambios en la base de datos
+    setInterval(fetchBoletosPublic, 10000);
+}
+
+// Fetch de boletos vendidos/apartados desde backend público
+async function fetchBoletosPublic() {
+    try {
+        let endpoint = (window.rifaplusConfig && window.rifaplusConfig.apiEndpoint) ? window.rifaplusConfig.apiEndpoint : 'http://localhost:3000';
+        // Normalize endpoint to avoid duplicate segments like `/api/api/...`
+        endpoint = String(endpoint).replace(/\/+$/,''); // remove trailing slash(es)
+        if (endpoint.endsWith('/api')) {
+            endpoint = endpoint.replace(/\/api$/, '');
+        }
+        const res = await fetch(`${endpoint}/api/public/boletos`);
+        if (!res.ok) return;
+        const json = await res.json();
+        if (json && json.success && json.data) {
+            window.rifaplusSoldNumbers = Array.isArray(json.data.sold) ? json.data.sold.map(Number) : [];
+            window.rifaplusReservedNumbers = Array.isArray(json.data.reserved) ? json.data.reserved.map(Number) : [];
+            // Re-render current range so the UI reflects updated sold/reserved numbers
+            const activeBtn = document.querySelector('.rango-btn.active');
+            if (activeBtn) {
+                const inicio = parseInt(activeBtn.getAttribute('data-inicio'), 10);
+                const fin = parseInt(activeBtn.getAttribute('data-fin'), 10);
+                renderRange(inicio, fin);
+            } else {
+                // If no active button, re-render default range
+                renderRange(1, Math.min(100, (window.rifaplusConfig && window.rifaplusConfig.totalTickets) ? window.rifaplusConfig.totalTickets : 500));
+            }
+        }
+    } catch (e) {
+        // Ignore network errors silently — UX will fallback
+        console.warn('fetchBoletosPublic error', e);
+    }
 }
 
 function inicializarMaquinaSuerteMejorada() {
@@ -207,10 +244,18 @@ function obtenerNumerosDisponibles() {
         todosLosNumeros.add(i);
     }
     
-    // Eliminar números que están vendidos/apartados (según la lógica visual: múltiplos de 10 y 7)
-    for (let i = 1; i <= totalTickets; i++) {
-        if (i % 10 === 0 || i % 7 === 0) {
-            todosLosNumeros.delete(i);
+    // Eliminar números que están vendidos/apartados según datos reales del servidor
+    try {
+        const sold = (window.rifaplusSoldNumbers && Array.isArray(window.rifaplusSoldNumbers)) ? window.rifaplusSoldNumbers : [];
+        const reserved = (window.rifaplusReservedNumbers && Array.isArray(window.rifaplusReservedNumbers)) ? window.rifaplusReservedNumbers : [];
+        sold.forEach(n => todosLosNumeros.delete(Number(n)));
+        reserved.forEach(n => todosLosNumeros.delete(Number(n)));
+    } catch (e) {
+        // Si falla, no romper la UX — dejar lógica por defecto
+        for (let i = 1; i <= totalTickets; i++) {
+            if (i % 10 === 0 || i % 7 === 0) {
+                todosLosNumeros.delete(i);
+            }
         }
     }
     
@@ -305,15 +350,44 @@ function configurarEventListeners() {
         });
     }
     
-    // 5. BOTÓN PROBAR MÁQUINA - Scroll suave a la sección
+    // 5. BOTÓN PROBAR MÁQUINA - Scroll suave con offset para mostrar el título
     if (btnProbarMaquina) {
-        btnProbarMaquina.addEventListener('click', function() {
+        btnProbarMaquina.addEventListener('click', function(e) {
+            e.preventDefault();
             const maquinaCard = document.getElementById('maquinaCard');
             if (maquinaCard) {
-                maquinaCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const yOffset = -80; // Ajusta el offset según la altura del header
+                const y = maquinaCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
             }
         });
     }
+
+    // Scroll con offset para "Seleccionar Boletos"
+    const btnSeleccionarBoletos = document.querySelector('.compra-hero-cta .btn[href="#numerosGrid"]');
+    if (btnSeleccionarBoletos) {
+        btnSeleccionarBoletos.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Buscar el título de la sección
+            const tituloBoletos = document.querySelector('.seleccion-section .section-title');
+            if (tituloBoletos) {
+                const yOffset = -40; // Ajusta el offset para que el título quede visible
+                const y = tituloBoletos.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            } else {
+                // Fallback al grid si no se encuentra el título
+                const numerosGrid = document.getElementById('numerosGrid');
+                if (numerosGrid) {
+                    const yOffset = -80;
+                    const y = numerosGrid.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }
+        });
+    }
+
+    // 6. BÚSQUEDA DE BOLETOS
+    configurarBuscadorBoletos();
 }
 
 function manejarClickNumero(boton) {
@@ -350,6 +424,7 @@ function manejarClickNumero(boton) {
     
     actualizarContadorCarrito();
     actualizarResumenCompra();
+    sincronizarCarritoAlLocalStorage();
 }
 
 function limpiarSeleccion() {
@@ -382,6 +457,12 @@ function actualizarContadorCarrito() {
         // Usar Set global en lugar de contar botones visibles (que pueden cambiar al cambiar rango)
         const cantidad = selectedNumbersGlobal.size;
         carritoCount.textContent = cantidad;
+    }
+    
+    // Actualizar vista del carrito si está abierto
+    const carritoModal = document.getElementById('carritoModal');
+    if (carritoModal && carritoModal.classList.contains('active')) {
+        actualizarVistaCarrito();
     }
 }
 
@@ -514,12 +595,15 @@ function renderRange(inicio, fin) {
         btn.textContent = i;
         btn.setAttribute('data-numero', i);
 
-        // Misma lógica visual para vendido/apartado usada originalmente
-        if (i % 10 === 0) {
+        // Marcar según datos reales obtenidos del servidor
+        const soldSet = new Set((window.rifaplusSoldNumbers && Array.isArray(window.rifaplusSoldNumbers)) ? window.rifaplusSoldNumbers : []);
+        const reservedSet = new Set((window.rifaplusReservedNumbers && Array.isArray(window.rifaplusReservedNumbers)) ? window.rifaplusReservedNumbers : []);
+
+        if (soldSet.has(i)) {
             btn.classList.add('sold');
             btn.disabled = true;
             btn.title = 'Vendido';
-        } else if (i % 7 === 0) {
+        } else if (reservedSet.has(i)) {
             btn.classList.add('reserved');
             btn.disabled = true;
             btn.title = 'Apartado';
@@ -546,6 +630,235 @@ function manejarCambioRango(boton) {
     // Después de renderizar, actualizar resumen/contador por si había selección previa
     actualizarContadorCarrito();
     actualizarResumenCompra();
+}
+
+// ===== BÚSQUEDA DE BOLETOS =====
+function configurarBuscadorBoletos() {
+    const inputBusqueda = document.getElementById('busquedaBoleto');
+    const btnBuscar = document.getElementById('btnBuscarBoleto');
+    const btnLimpiar = document.getElementById('btnLimpiarBusqueda');
+    const resultadosDiv = document.getElementById('busquedaResultados');
+    const resultadosList = document.getElementById('resultadosList');
+    const rangoTotal = document.getElementById('rangoTotal');
+
+    const totalTickets = (window.rifaplusConfig && window.rifaplusConfig.totalTickets) ? window.rifaplusConfig.totalTickets : 500;
+    if (rangoTotal) rangoTotal.textContent = totalTickets;
+
+    if (!inputBusqueda || !btnBuscar) return;
+
+    // Ejecutar búsqueda al hacer click en botón
+    btnBuscar.addEventListener('click', ejecutarBusqueda);
+
+    // Ejecutar búsqueda al presionar Enter
+    inputBusqueda.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            ejecutarBusqueda();
+        }
+    });
+
+    // Limpiar búsqueda
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener('click', function() {
+            inputBusqueda.value = '';
+            resultadosDiv.style.display = 'none';
+            resultadosList.innerHTML = '';
+            inputBusqueda.focus();
+        });
+    }
+
+    function ejecutarBusqueda() {
+        const valor = inputBusqueda.value.trim();
+        
+        if (!valor) {
+            rifaplusUtils.showFeedback('⚠️ Ingresa un número para buscar', 'warning');
+            return;
+        }
+
+        const numero = parseInt(valor, 10);
+
+        if (isNaN(numero) || numero < 1 || numero > totalTickets) {
+            rifaplusUtils.showFeedback(`⚠️ Ingresa un número válido entre 1 y ${totalTickets}`, 'warning');
+            resultadosDiv.style.display = 'none';
+            return;
+        }
+
+        // Obtener estado del boleto (vendido, apartado, disponible)
+        const sold = (window.rifaplusSoldNumbers && Array.isArray(window.rifaplusSoldNumbers)) ? window.rifaplusSoldNumbers : [];
+        const reserved = (window.rifaplusReservedNumbers && Array.isArray(window.rifaplusReservedNumbers)) ? window.rifaplusReservedNumbers : [];
+
+        const estaVendido = sold.includes(numero);
+        const estaApartado = reserved.includes(numero);
+
+        // Mostrar resultado
+        mostrarResultadoBusqueda(numero, estaVendido, estaApartado);
+    }
+
+    function mostrarResultadoBusqueda(numero, vendido, apartado) {
+        resultadosList.innerHTML = '';
+
+        let statusText = '✅ Disponible';
+        let statusClass = 'disponible';
+
+        if (vendido) {
+            statusText = '❌ Vendido';
+            statusClass = 'vendido';
+        } else if (apartado) {
+            statusText = '⏳ Apartado';
+            statusClass = 'apartado';
+        }
+
+        const resultadoHtml = `
+            <div class="resultado-item" style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: #f9fafb; border-radius: 0.5rem; margin-bottom: 0.5rem;">
+                <div>
+                    <span style="font-weight: 600; font-size: 1.1rem; color: var(--text-dark);">Boleto #${numero}</span>
+                    <span style="display: block; font-size: 0.85rem; color: var(--text-light);">Estado: <strong style="color: ${vendido ? 'var(--danger)' : apartado ? 'var(--primary)' : 'var(--success)'}">${statusText}</strong></span>
+                </div>
+                ${!vendido && !apartado ? `<button class="btn-seleccionar-resultado" data-numero="${numero}" style="padding: 0.5rem 1rem; background: var(--success); color: white; border: none; border-radius: 0.375rem; cursor: pointer; font-weight: 600; transition: var(--transition-fast);">Seleccionar</button>` : ''}
+            </div>
+        `;
+
+        resultadosList.insertAdjacentHTML('beforeend', resultadoHtml);
+
+        // Añadir event listener al botón de seleccionar
+        const btnSeleccionar = resultadosList.querySelector(`[data-numero="${numero}"]`);
+        if (btnSeleccionar) {
+            btnSeleccionar.addEventListener('click', function() {
+                // Buscar en la grilla el botón del número y hacer click
+                const botonNumero = document.querySelector(`.numero-btn[data-numero="${numero}"]`);
+                if (botonNumero && !botonNumero.classList.contains('sold') && !botonNumero.classList.contains('reserved')) {
+                    botonNumero.click();
+                    rifaplusUtils.showFeedback(`✅ Boleto #${numero} seleccionado`, 'success');
+                } else {
+                    rifaplusUtils.showFeedback(`⚠️ Boleto #${numero} no disponible o ya seleccionado`, 'warning');
+                }
+            });
+        }
+
+        resultadosDiv.style.display = 'block';
+    }
+}
+
+// ===== CARRITO EXPANDIBLE =====
+function inicializarCarrito() {
+    const carritoNav = document.getElementById('carritoNav');
+    const carritoModal = document.getElementById('carritoModal');
+    const closeCarrito = document.getElementById('closeCarrito');
+    const btnSeguirComprando = document.getElementById('btnSeguirComprando');
+    const btnProcederCarrito = document.getElementById('btnProcederCarrito');
+
+    if (!carritoNav || !carritoModal) return;
+
+    // Abrir carrito al hacer click en el icono
+    carritoNav.addEventListener('click', function() {
+        carritoModal.classList.add('active');
+        actualizarVistaCarrito();
+    });
+
+    // Cerrar carrito
+    closeCarrito.addEventListener('click', cerrarCarrito);
+    carritoModal.addEventListener('click', function(e) {
+        if (e.target === carritoModal) {
+            cerrarCarrito();
+        }
+    });
+
+    // Botón "Seguir comprando"
+    btnSeguirComprando.addEventListener('click', cerrarCarrito);
+
+    // Botón "Proceder al pago"
+    btnProcederCarrito.addEventListener('click', function() {
+        cerrarCarrito();
+        const btnComprar = document.getElementById('btnComprar');
+        if (btnComprar) {
+            btnComprar.click();
+        }
+    });
+
+    // Tecla Escape para cerrar
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && carritoModal.classList.contains('active')) {
+            cerrarCarrito();
+        }
+    });
+}
+
+function cerrarCarrito() {
+    const carritoModal = document.getElementById('carritoModal');
+    if (carritoModal) {
+        carritoModal.classList.remove('active');
+    }
+}
+
+function actualizarVistaCarrito() {
+    const carritoItems = document.getElementById('carritoItems');
+    const carritoVacio = document.getElementById('carritoVacio');
+    const carritoLista = document.getElementById('carritoLista');
+    const carritoResumen = document.getElementById('carritoResumen');
+    const carritoResumenCantidad = document.getElementById('carritoResumenCantidad');
+    const carritoResumenDescuento = document.getElementById('carritoResumenDescuento');
+    const carritoResumenTotal = document.getElementById('carritoResumenTotal');
+    const btnProcederCarrito = document.getElementById('btnProcederCarrito');
+
+    carritoItems.innerHTML = '';
+
+    if (selectedNumbersGlobal.size === 0) {
+        carritoVacio.style.display = 'flex';
+        carritoLista.style.display = 'none';
+        carritoResumen.style.display = 'none';
+        btnProcederCarrito.disabled = true;
+        return;
+    }
+
+    carritoVacio.style.display = 'none';
+    carritoLista.style.display = 'block';
+    carritoResumen.style.display = 'flex';
+    btnProcederCarrito.disabled = false;
+
+    // Crear lista de boletos ordenados
+    const numerosOrdenados = Array.from(selectedNumbersGlobal).sort((a, b) => a - b);
+    const precioUnitario = (window.rifaplusConfig && window.rifaplusConfig.ticketPrice) ? Number(window.rifaplusConfig.ticketPrice) : 50;
+
+    numerosOrdenados.forEach(numero => {
+        const itemHtml = `
+            <div class="carrito-item" data-numero="${numero}">
+                <div class="carrito-item-numero">
+                    <span class="carrito-item-numero-text">Boleto #${numero}</span>
+                    <span class="carrito-item-numero-precio">$${precioUnitario.toFixed(2)}</span>
+                </div>
+                <button class="carrito-item-trash-btn" data-numero="${numero}" aria-label="Eliminar boleto ${numero}" title="Eliminar boleto ${numero}">
+                    <i class="fas fa-trash carrito-item-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+        `;
+        carritoItems.insertAdjacentHTML('beforeend', itemHtml);
+    });
+
+    // Añadir event listeners solo al icono de basura por fila
+    carritoItems.querySelectorAll('.carrito-item-trash-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const numero = parseInt(this.getAttribute('data-numero'), 10);
+            // Buscar y activar el botón del número en la grilla (si existe)
+            const botonNumero = document.querySelector(`.numero-btn[data-numero="${numero}"]`);
+            if (botonNumero) {
+                botonNumero.click();
+            } else {
+                if (typeof removerBoletoSeleccionado === 'function') {
+                    removerBoletoSeleccionado(numero);
+                }
+            }
+            actualizarVistaCarrito();
+        });
+    });
+
+    // Actualizar resumen
+    const calcTotal = rifaplusUtils.calcularDescuento(selectedNumbersGlobal.size, precioUnitario);
+    if (carritoResumenCantidad) carritoResumenCantidad.textContent = calcTotal.cantidadBoletos;
+    const subtotalEl = document.getElementById('carritoResumenSubtotal');
+    if (subtotalEl) subtotalEl.textContent = `$${calcTotal.subtotal.toFixed(2)}`;
+    if (carritoResumenDescuento) carritoResumenDescuento.textContent = `$${calcTotal.descuentoMonto.toFixed(2)}`;
+    if (carritoResumenTotal) carritoResumenTotal.textContent = `$${calcTotal.totalFinal.toFixed(2)}`;
 }
 
 // Actualizar resumen poco después de cargar

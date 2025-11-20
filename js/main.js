@@ -58,6 +58,33 @@ window.rifaplusConfig = {
     ]
 };
 
+// Normalizar `apiEndpoint` para evitar inconsistencias en distintos módulos.
+(function normalizeApiConfig() {
+    try {
+        let ep = String(window.rifaplusConfig.apiEndpoint || 'http://localhost:3000');
+        // remove trailing slashes
+        ep = ep.replace(/\/+$/,'');
+
+        // Keep `apiEndpoint` as provided (for modules that expect it includes `/api`),
+        // but expose a normalized `apiBase` (sin `/api`) and a helper `buildApi`.
+        window.rifaplusConfig.apiEndpoint = ep;
+        window.rifaplusConfig.apiBase = ep.replace(/\/api$/, '');
+
+        window.rifaplusConfig.buildApi = function(path) {
+            if (!path) return ep;
+            const p = path.startsWith('/') ? path : '/' + path;
+            // If path already starts with /api, use apiBase + path to avoid /api/api
+            if (p.startsWith('/api')) {
+                return window.rifaplusConfig.apiBase + p;
+            }
+            // Otherwise append to configured apiEndpoint
+            return window.rifaplusConfig.apiEndpoint + p;
+        };
+    } catch (e) {
+        // noop
+    }
+})();
+
 // Sistema de utilidades global
 window.rifaplusUtils = {
     showLoading: function(element) {

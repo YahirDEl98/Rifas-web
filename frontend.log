@@ -1,154 +1,1532 @@
-::1 - - [15/Nov/2025 17:18:19] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:19] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:19] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:19] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:19] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:19] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:23] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:23] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:23] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:23] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:23] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:25] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:28] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:28] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:28] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:28] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:18:28] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:34] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:38] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:38] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:38] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:38] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:20:38] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:04] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:08] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:08] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:08] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:08] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:08] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:46] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:50] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:50] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:50] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:50] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:21:50] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:02] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:05] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:05] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:05] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:05] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:23:05] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:34:59] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:35:02] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:35:02] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:35:02] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:35:02] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:35:02] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:24] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:29] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:29] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:29] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:29] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:36:29] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:15] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:18] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:18] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:18] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:18] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:37:18] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:53] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:57] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:57] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:57] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:57] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:39:57] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:08] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:11] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:11] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:11] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:11] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:41:11] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:49] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:53] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:53] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:53] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:53] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:43:53] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:32] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:35] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:35] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:35] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:35] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:44:35] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /compra.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /css/modal-contacto.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /css/styles.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:47] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:51] "GET /orden.html HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:51] "GET /css/orden.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:51] "GET /js/orden-formal.js?v=20251115 HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:51] "GET /css/orden-formal.css HTTP/1.1" 200 -
-::1 - - [15/Nov/2025 17:46:51] "GET /js/orden.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:28:49] "GET / HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:29:15] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:29:15] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:29:15] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:29:15] "GET /js/countdown.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:29:16] code 404, message File not found
+::1 - - [17/Nov/2025 00:29:16] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:33:58] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:33:58] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:34:21] code 404, message File not found
+::1 - - [17/Nov/2025 00:34:21] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:39:06] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:39:06] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:39:18] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:39:19] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:39:24] code 404, message File not found
+::1 - - [17/Nov/2025 00:39:24] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:39:33] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:39:33] code 404, message File not found
+::1 - - [17/Nov/2025 00:39:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:39:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] code 404, message File not found
+::1 - - [17/Nov/2025 00:39:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:39:37] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:39:37] code 404, message File not found
+::1 - - [17/Nov/2025 00:39:37] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:40:52] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:40:52] code 404, message File not found
+::1 - - [17/Nov/2025 00:40:52] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:42:30] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:42:30] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:42:30] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:00] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:00] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:00] "GET /js/countdown.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:00] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:01] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:05] "GET /js/compra.js?v=20251115 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:13] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:13] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:20] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:20] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:20] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:20] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:20] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:20] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:20] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:21] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:21] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:21] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:21] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:54:24] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:24] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:24] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:24] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:27] "GET /mis-boletos.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:27] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:27] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:29] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:29] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:54:32] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 00:54:32] code 404, message File not found
+::1 - - [17/Nov/2025 00:54:32] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:57:15] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] code 404, message File not found
+::1 - - [17/Nov/2025 00:57:15] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 00:57:15] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 00:57:15] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:05:18] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:05:18] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:05:18] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:08:21] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:21] code 404, message File not found
+::1 - - [17/Nov/2025 01:08:21] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:08:28] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] code 404, message File not found
+::1 - - [17/Nov/2025 01:08:28] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:08:28] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:28] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:08:37] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:08:37] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:08:38] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:08:38] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:10:01] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:01] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:01] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:01] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:01] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:03] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:10:13] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:10:13] code 404, message File not found
+::1 - - [17/Nov/2025 01:10:13] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:11:07] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:07] code 404, message File not found
+::1 - - [17/Nov/2025 01:11:07] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:11:07] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:07] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:07] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:07] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:08] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:08] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:08] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:11:08] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:20] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:15:44] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:15:44] "GET /js/compra.js?v=20251115 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:15:44] code 404, message File not found
+::1 - - [17/Nov/2025 01:15:44] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:16:49] code 404, message File not found
+::1 - - [17/Nov/2025 01:16:49] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:16:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:19:03] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] code 404, message File not found
+::1 - - [17/Nov/2025 01:19:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:19:03] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:19:03] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] code 404, message File not found
+::1 - - [17/Nov/2025 01:20:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:20:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:20:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:25] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:27:25] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:27:25] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:27:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 60882, 0, 0)
+::1 - - [17/Nov/2025 01:27:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /js/countdown.js HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::1 - - [17/Nov/2025 01:27:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:27:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:28:57] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:28:57] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:29:29] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:29:29] code 404, message File not found
+::1 - - [17/Nov/2025 01:29:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:33:52] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] code 404, message File not found
+::1 - - [17/Nov/2025 01:33:52] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:33:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:33:52] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:34:04] "GET /js/compra.js?v=20251115 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:34:04] code 404, message File not found
+::1 - - [17/Nov/2025 01:34:04] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:34:08] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:34:08] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:34:10] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:34:15] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:34:48] "GET /compra.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:34:48] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:35:00] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:38:32] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:32] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:32] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:32] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:38:32] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:38:32] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:38:32] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:38:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 62190, 0, 0)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+::1 - - [17/Nov/2025 01:38:37] "GET /css/styles.css HTTP/1.1" 200 -
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+::1 - - [17/Nov/2025 01:38:37] "GET /js/config.js HTTP/1.1" 200 -
+----------------------------------------
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 62210, 0, 0)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::1 - - [17/Nov/2025 01:38:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:37] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:38] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:38] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:38] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:38] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:38] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:42] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:49] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 62243, 0, 0)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+::1 - - [17/Nov/2025 01:38:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:51] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:52] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:38:53] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:00] code 404, message File not found
+::1 - - [17/Nov/2025 01:39:00] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:39:07] "GET /compra.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:39:07] code 404, message File not found
+::1 - - [17/Nov/2025 01:39:07] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:39:07] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:39:09] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] code 404, message File not found
+::1 - - [17/Nov/2025 01:39:09] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:39:09] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /css/modal-contacto.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /js/main.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /js/modal-contacto.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /js/compra.js?v=20251115 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:09] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:39:11] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:39:11] code 404, message File not found
+::1 - - [17/Nov/2025 01:39:11] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:25] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:25] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:25] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:25] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 63857, 0, 0)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+::1 - - [17/Nov/2025 01:44:33] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/config.js HTTP/1.1" 200 -
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+::1 - - [17/Nov/2025 01:44:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+----------------------------------------
+::1 - - [17/Nov/2025 01:44:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] code 404, message File not found
+::1 - - [17/Nov/2025 01:44:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:44:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:44:46] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:46] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:47] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:44:48] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:45:43] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:45:43] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:45:43] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:46:08] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:46:08] code 404, message File not found
+::1 - - [17/Nov/2025 01:46:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:48:15] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:48:15] code 404, message File not found
+::1 - - [17/Nov/2025 01:48:15] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:48:15] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:15] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:48:16] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 01:48:16] code 404, message File not found
+::1 - - [17/Nov/2025 01:48:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:48:31] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] code 404, message File not found
+::1 - - [17/Nov/2025 01:48:31] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 01:48:31] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:31] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 01:48:32] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:00:53] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:00:53] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:00:53] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:00:53] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:00:53] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:00:54] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:01:34] code 404, message File not found
+::1 - - [17/Nov/2025 02:01:34] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:01:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:03:01] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:01] code 404, message File not found
+::1 - - [17/Nov/2025 02:03:01] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:03:01] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:01] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:01] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:01] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:01] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:02] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:02] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:02] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:13] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:03:13] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:03:14] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:03:14] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:03:14] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:03:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:03:38] code 404, message File not found
+::1 - - [17/Nov/2025 02:03:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:05:52] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:05:52] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:05:52] code 404, message File not found
+::1 - - [17/Nov/2025 02:05:52] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:05:53] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:05:53] code 404, message File not found
+::1 - - [17/Nov/2025 02:05:53] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:05] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:05] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:05] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:05] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:05] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:05] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:05] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:06] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:06] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:06] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:06] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:10] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:10] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:10] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:48] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:48] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:48] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:10:50] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 52750, 0, 0)
+::1 - - [17/Nov/2025 02:10:51] code 404, message File not found
+::1 - - [17/Nov/2025 02:10:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 1311, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+::1 - - [17/Nov/2025 02:10:51] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /js/config.js HTTP/1.1" 200 -
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 679, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 878, in copyfile
+    shutil.copyfileobj(source, outputfile)
+::1 - - [17/Nov/2025 02:10:51] "GET /js/main.js HTTP/1.1" 200 -
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+::1 - - [17/Nov/2025 02:10:51] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::1 - - [17/Nov/2025 02:10:51] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:10:51] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:15] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:15] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:15] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:19] "GET /compra.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:13:19] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:19] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:19] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:13:19] "GET /js/compra.js?v=20251115 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:13:20] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:20] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:21] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:21] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:22] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:23] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:23] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:13:23] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:13:24] code 404, message File not found
+::1 - - [17/Nov/2025 02:13:24] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:18:46] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:18:46] code 404, message File not found
+::1 - - [17/Nov/2025 02:18:46] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:18:46] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:18:46] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:21:21] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:21:21] code 404, message File not found
+::1 - - [17/Nov/2025 02:21:21] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:21:21] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:21:21] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:21:21] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:21:21] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:26] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:26] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:26] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:27] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:27] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:27] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:28] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:27:32] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:32] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:27:43] code 404, message File not found
+::1 - - [17/Nov/2025 02:27:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:29:53] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:29:54] code 404, message File not found
+::1 - - [17/Nov/2025 02:29:54] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:29:54] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:29:54] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:29:54] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:29:54] code 404, message File not found
+::1 - - [17/Nov/2025 02:29:54] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:29:54] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:29:54] code 404, message File not found
+::1 - - [17/Nov/2025 02:29:54] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:30:00] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] code 404, message File not found
+::1 - - [17/Nov/2025 02:30:00] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:30:00] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:00] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:32] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:30:32] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:30:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:34] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:35] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:30:40] code 404, message File not found
+::1 - - [17/Nov/2025 02:30:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:33:37] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:33:37] code 404, message File not found
+::1 - - [17/Nov/2025 02:33:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:33:37] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:33:37] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:33:45] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:33:45] code 404, message File not found
+::1 - - [17/Nov/2025 02:33:45] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:33:45] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:35:08] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:35:08] code 404, message File not found
+::1 - - [17/Nov/2025 02:35:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:35:08] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:35:10] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:35:10] code 404, message File not found
+::1 - - [17/Nov/2025 02:35:10] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:35:10] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:17] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:17] code 404, message File not found
+::1 - - [17/Nov/2025 02:36:17] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:36:17] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:17] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:36:26] "GET /compra.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:26] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:26] "GET /js/compra.js?v=20251115 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:36:29] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:37:09] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:37:09] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:38:10] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:10] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:23] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:23] code 404, message File not found
+::1 - - [17/Nov/2025 02:38:23] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:38:57] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:57] code 404, message File not found
+::1 - - [17/Nov/2025 02:38:57] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:38:57] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:57] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:58] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:38:58] code 404, message File not found
+::1 - - [17/Nov/2025 02:38:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:39:01] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:39:01] code 404, message File not found
+::1 - - [17/Nov/2025 02:39:01] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:40:54] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:40:54] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:40:54] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:40:54] code 404, message File not found
+::1 - - [17/Nov/2025 02:40:54] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:40:54] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:40:56] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:40:56] code 404, message File not found
+::1 - - [17/Nov/2025 02:40:56] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:41:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] code 404, message File not found
+::1 - - [17/Nov/2025 02:41:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:41:02] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:41:02] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:04] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:04] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:04] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:04] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:05] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:05] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:05] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:05] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:06] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:06] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:06] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:44:06] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:29] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:29] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:29] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] code 404, message File not found
+::1 - - [17/Nov/2025 02:44:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:44:33] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:44:33] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:41] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:41] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:41] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:41] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:41] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:42] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:42] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:43] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:43] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:43] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:43] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:43] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:43] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:43] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:48:43] code 404, message File not found
+::1 - - [17/Nov/2025 02:48:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:48:49] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:49] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:50] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:55] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:56] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:57] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:48:58] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:00] code 404, message File not found
+::1 - - [17/Nov/2025 02:49:00] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:49:04] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] code 404, message File not found
+::1 - - [17/Nov/2025 02:49:04] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:49:04] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:49:04] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:51:00] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:51:00] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:51:00] code 404, message File not found
+::1 - - [17/Nov/2025 02:51:00] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:53:35] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:35] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:35] "GET /js/config.js HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:35] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:39] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:46] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:46] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:47] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:53:49] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:49] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:53:49] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:54:05] code 404, message File not found
+::1 - - [17/Nov/2025 02:54:05] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:54:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:54:12] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] code 404, message File not found
+::1 - - [17/Nov/2025 02:54:12] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:54:12] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:12] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:54:14] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:54:14] code 404, message File not found
+::1 - - [17/Nov/2025 02:54:14] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:56:25] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:56:25] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:56:25] code 404, message File not found
+::1 - - [17/Nov/2025 02:56:25] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:56:27] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /css/styles.css?v=20251117.3 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] code 404, message File not found
+::1 - - [17/Nov/2025 02:56:27] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:56:27] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:56:27] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:02] "GET /css/styles.css?v=20251117.6 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:02] code 404, message File not found
+::1 - - [17/Nov/2025 02:58:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:58:03] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:58:03] code 404, message File not found
+::1 - - [17/Nov/2025 02:58:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:58:05] "GET /index.html HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] code 404, message File not found
+::1 - - [17/Nov/2025 02:58:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [17/Nov/2025 02:58:05] "GET /css/styles.css?v=20251117.6 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /js/config.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /images/sorteos-yepe-logo.png?v=20251117 HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /js/countdown.js HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /images/caja.jpg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /images/trasera.jpeg HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /images/frontal.webp HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:05] "GET /images/sorteos-yepe-logo.png HTTP/1.1" 200 -
+::1 - - [17/Nov/2025 02:58:23] "GET /index.html HTTP/1.1" 304 -
+::1 - - [17/Nov/2025 02:58:33] code 404, message File not found
+::1 - - [17/Nov/2025 02:58:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -

@@ -34,6 +34,10 @@ function validarFormularioContacto() {
     const whatsapp = document.getElementById('clienteWhatsapp').value.trim();
     const emailEl = document.getElementById('clienteEmail');
     const email = emailEl ? emailEl.value.trim() : '';
+    const estadoEl = document.getElementById('clienteEstado');
+    const estado = estadoEl ? (estadoEl.value || '').trim() : '';
+    const ciudadEl = document.getElementById('clienteCiudad');
+    const ciudad = ciudadEl ? ciudadEl.value.trim() : '';
     
     let valido = true;
     
@@ -77,24 +81,41 @@ function validarFormularioContacto() {
         // limpiar error si no hay email
         document.getElementById('errorEmail').textContent = '';
     }
+
+    // Validar estado (obligatorio)
+    if (!estado) {
+        document.getElementById('errorEstado').textContent = 'Selecciona tu estado';
+        valido = false;
+    } else {
+        document.getElementById('errorEstado').textContent = '';
+    }
+
+    // Validar ciudad/localidad (obligatorio)
+    if (!ciudad || ciudad.length < 2) {
+        document.getElementById('errorCiudad').textContent = 'Por favor indica tu ciudad o localidad';
+        valido = false;
+    } else {
+        document.getElementById('errorCiudad').textContent = '';
+    }
     
     return valido;
 }
 
 function generarIdOrden() {
-    // Generar ID único secuencial: RIFA-00001, RIFA-00002, etc.
-    const contador = window.rifaplusConfig.orderCounter || 1;
-    const id = `RIFA-${String(contador).padStart(5, '0')}`;
-    window.rifaplusConfig.orderCounter = contador + 1;
+    // Generar ID único usando timestamp (garantiza unicidad y evita duplicados)
+    const timestamp = Date.now();
+    const id = `RIFA-${timestamp}`;
     return id;
 }
 
-function guardarClienteEnStorage(nombre, apellidos, whatsapp, email) {
+function guardarClienteEnStorage(nombre, apellidos, whatsapp, email, estado, ciudad) {
     const clienteData = {
         nombre,
         apellidos,
         whatsapp,
         email: email || undefined,
+        estado: estado || undefined,
+        ciudad: ciudad || undefined,
         ordenId: generarIdOrden(),
         fecha: new Date().toISOString()
     };
@@ -149,9 +170,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const apellidos = document.getElementById('clienteApellidos').value.trim();
                 const whatsapp = document.getElementById('clienteWhatsapp').value.trim();
                 const email = document.getElementById('clienteEmail') ? document.getElementById('clienteEmail').value.trim() : '';
-                
-                // Guardar en storage (incluyendo email si fue provisto)
-                guardarClienteEnStorage(nombre, apellidos, whatsapp, email);
+                const estado = document.getElementById('clienteEstado') ? document.getElementById('clienteEstado').value : '';
+                const ciudad = document.getElementById('clienteCiudad') ? document.getElementById('clienteCiudad').value.trim() : '';
+
+                // Guardar en storage (incluyendo email, estado y ciudad si fueron provistos)
+                guardarClienteEnStorage(nombre, apellidos, whatsapp, email, estado, ciudad);
                 guardarBoletoSeleccionadosEnStorage();
                 
                 // Redirigir a página de orden
