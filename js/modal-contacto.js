@@ -32,8 +32,6 @@ function validarFormularioContacto() {
     const nombre = document.getElementById('clienteNombre').value.trim();
     const apellidos = document.getElementById('clienteApellidos').value.trim();
     const whatsapp = document.getElementById('clienteWhatsapp').value.trim();
-    const emailEl = document.getElementById('clienteEmail');
-    const email = emailEl ? emailEl.value.trim() : '';
     const estadoEl = document.getElementById('clienteEstado');
     const estado = estadoEl ? (estadoEl.value || '').trim() : '';
     const ciudadEl = document.getElementById('clienteCiudad');
@@ -57,29 +55,13 @@ function validarFormularioContacto() {
         document.getElementById('errorApellidos').textContent = '';
     }
     
-    // Validar WhatsApp (formato básico: números, espacios, +, -)
-    const whatsappRegex = /^[+]?[0-9\s\-()]{7,}$/;
-    if (!whatsapp || !whatsappRegex.test(whatsapp)) {
-        document.getElementById('errorWhatsapp').textContent = 'Por favor ingresa un número de WhatsApp válido';
+    // Validar WhatsApp: exigir exactamente 10 dígitos (solo números)
+    const whatsappDigits = whatsapp.replace(/\D/g, '');
+    if (!whatsappDigits || whatsappDigits.length !== 10) {
+        document.getElementById('errorWhatsapp').textContent = 'Ingresa exactamente 10 dígitos para WhatsApp';
         valido = false;
     } else {
         document.getElementById('errorWhatsapp').textContent = '';
-    }
-
-    // Validar email (opcional) - si se proporciona debe ser válido
-    if (email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            if (emailEl) emailEl.classList.add('invalid');
-            document.getElementById('errorEmail').textContent = 'Por favor ingresa un correo electrónico válido';
-            valido = false;
-        } else {
-            if (emailEl) emailEl.classList.remove('invalid');
-            document.getElementById('errorEmail').textContent = '';
-        }
-    } else {
-        // limpiar error si no hay email
-        document.getElementById('errorEmail').textContent = '';
     }
 
     // Validar estado (obligatorio)
@@ -108,12 +90,11 @@ function generarIdOrden() {
     return id;
 }
 
-function guardarClienteEnStorage(nombre, apellidos, whatsapp, email, estado, ciudad) {
+function guardarClienteEnStorage(nombre, apellidos, whatsapp, estado, ciudad) {
     const clienteData = {
         nombre,
         apellidos,
         whatsapp,
-        email: email || undefined,
         estado: estado || undefined,
         ciudad: ciudad || undefined,
         ordenId: generarIdOrden(),
@@ -169,12 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nombre = document.getElementById('clienteNombre').value.trim();
                 const apellidos = document.getElementById('clienteApellidos').value.trim();
                 const whatsapp = document.getElementById('clienteWhatsapp').value.trim();
-                const email = document.getElementById('clienteEmail') ? document.getElementById('clienteEmail').value.trim() : '';
                 const estado = document.getElementById('clienteEstado') ? document.getElementById('clienteEstado').value : '';
                 const ciudad = document.getElementById('clienteCiudad') ? document.getElementById('clienteCiudad').value.trim() : '';
 
-                // Guardar en storage (incluyendo email, estado y ciudad si fueron provistos)
-                guardarClienteEnStorage(nombre, apellidos, whatsapp, email, estado, ciudad);
+                // Guardar en storage (estado y ciudad obligatorios)
+                guardarClienteEnStorage(nombre, apellidos, whatsapp, estado, ciudad);
                 guardarBoletoSeleccionadosEnStorage();
                 
                 // Redirigir a página de orden
