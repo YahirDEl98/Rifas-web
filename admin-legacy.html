@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - SORTEOS YEPE</title>
+    <link rel="icon" href="images/sorteos-yepe-logo.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/sorteos-yepe-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #dbeafe;
+            --success: #16a34a;
+            --warning: #ea580c;
+            --danger: #dc2626;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border: #e5e7eb;
+            --radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .header-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #15803d;
+        }
+
+        .btn-secondary {
+            background: var(--text-light);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #374151;
+        }
+
+        .filter-group {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+        }
+
+        .orders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .order-id {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .order-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-confirmada {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-rechazada {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .order-client {
+            margin-bottom: 1rem;
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .client-phone {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            word-break: break-all;
+        }
+
+        .order-details {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .order-actions button {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-confirm {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-confirm:hover {
+            background: #15803d;
+        }
+
+        .btn-reject {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-reject:hover {
+            background: #b91c1c;
+        }
+
+        .btn-view {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-view:hover {
+            background: var(--primary-dark);
+        }
+
+        .empty-state {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            color: var(--primary);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .close-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .order-detail-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .order-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-item-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .detail-item-value {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .orders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 1.5rem;
+            }
+
+            .filter-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group select,
+            .filter-group input {
+                width: 100%;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Panel de Administración - RifaPlus</h1>
+            <p style="color: var(--text-light); margin-top: 0.5rem;">Gestiona y confirma órdenes de pago en tiempo real</p>
+
+            <div class="header-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total de Órdenes</div>
+                    <div class="stat-value" id="totalOrders">0</div>
+                </div>
+                <div class="stat-box" style="border-left-color: var(--warning);">
+                    <div class="stat-label">Pendientes</div>
+                    <div class="stat-value" id="pendingOrders" style="color: var(--warning);">0</div>
+                </div>
+                <div class="stat-box" style="border-left-color: var(--success);">
+                    <div class="stat-label">Confirmadas</div>
+                    <div class="stat-value" id="confirmadaOrders" style="color: var(--success);">0</div>
+                </div>
+                <div class="stat-box" style="border-left-color: var(--danger);">
+                    <div class="stat-label">Rechazadas</div>
+                    <div class="stat-value" id="rechazadaOrders" style="color: var(--danger);">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-primary" onclick="cargarOrdenes()">🔄 Actualizar Órdenes</button>
+            <button class="btn-secondary" onclick="limpiarLocalStorage()">🗑️ Limpiar Datos (Test)</button>
+            <button class="btn-success" onclick="exportarOrdenesToCSV()">📥 Exportar a CSV</button>
+        </div>
+
+        <div class="filter-group">
+            <select id="filterStatus" onchange="aplicarFiltros()">
+                <option value="">Todos los Estados</option>
+                <option value="pendiente">Pendientes</option>
+                <option value="confirmada">Confirmadas</option>
+                <option value="rechazada">Rechazadas</option>
+            </select>
+            <input type="text" id="filterSearch" placeholder="Buscar por orden, cliente o teléfono..." onkeyup="aplicarFiltros()">
+        </div>
+
+        <div class="orders-grid" id="ordersContainer">
+            <div class="empty-state">
+                <p>📭 No hay órdenes registradas aún</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver detalles -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalles de la Orden</h2>
+                <button class="close-btn" onclick="cerrarModal()">&times;</button>
+            </div>
+            <div id="detailContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulación de órdenes en localStorage para desarrollo
+        function inicializarConDatos() {
+            if (!localStorage.getItem('rifaplus_ordenes_admin')) {
+                const ordenesDemo = [
+                    {
+                        ordenId: 'RIFA-00001',
+                        cliente: { nombre: 'Juan', apellidos: 'Pérez López', whatsapp: '+52 4591111111' },
+                        totales: { total: 250, descuento: 0, totalFinal: 250 },
+                        boletos: [1, 2, 3, 4, 5],
+                        cuenta: { bank: 'Banco Mercantil' },
+                        estado: 'pendiente',
+                        fecha: new Date().toISOString()
+                    }
+                ];
+                localStorage.setItem('rifaplus_ordenes_admin', JSON.stringify(ordenesDemo));
+            }
+        }
+
+        function cargarOrdenes() {
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+            const container = document.getElementById('ordersContainer');
+
+            if (ordenes.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>📭 No hay órdenes registradas aún</p></div>';
+                actualizarEstadisticas(ordenes);
+                return;
+            }
+
+            container.innerHTML = ordenes.map((orden, idx) => `
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-id">${orden.ordenId}</div>
+                        <span class="order-status status-${orden.estado || 'pendiente'}">${orden.estado || 'Pendiente'}</span>
+                    </div>
+                    <div class="order-client">
+                        <div class="client-name">${orden.cliente.nombre} ${orden.cliente.apellidos}</div>
+                        <div class="client-phone">☎️ ${orden.cliente.whatsapp}</div>
+                    </div>
+                    <div class="order-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Boletos:</span>
+                            <span class="detail-value">${orden.boletos.length}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Total:</span>
+                            <span class="detail-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Banco:</span>
+                            <span class="detail-value">${orden.cuenta.bank}</span>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn-view" onclick="verDetalles(${idx})">Ver Detalles</button>
+                        ${orden.estado !== 'confirmada' ? `<button class="btn-confirm" onclick="confirmarOrden(${idx})">✓ Confirmar</button>` : ''}
+                        ${orden.estado !== 'rechazada' ? `<button class="btn-reject" onclick="rechazarOrden(${idx})">✗ Rechazar</button>` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            actualizarEstadisticas(ordenes);
+        }
+
+        function actualizarEstadisticas(ordenes) {
+            document.getElementById('totalOrders').textContent = ordenes.length;
+            document.getElementById('pendingOrders').textContent = ordenes.filter(o => o.estado === 'pendiente' || !o.estado).length;
+            document.getElementById('confirmadaOrders').textContent = ordenes.filter(o => o.estado === 'confirmada').length;
+            document.getElementById('rechazadaOrders').textContent = ordenes.filter(o => o.estado === 'rechazada').length;
+        }
+
+        function confirmarOrden(idx) {
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+            if (ordenes[idx]) {
+                ordenes[idx].estado = 'confirmada';
+                ordenes[idx].fechaConfirmacion = new Date().toISOString();
+                localStorage.setItem('rifaplus_ordenes_admin', JSON.stringify(ordenes));
+                cargarOrdenes();
+                alert(`✅ Orden ${ordenes[idx].ordenId} confirmada`);
+            }
+        }
+
+        function rechazarOrden(idx) {
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+            if (ordenes[idx]) {
+                ordenes[idx].estado = 'rechazada';
+                ordenes[idx].fechaRechazo = new Date().toISOString();
+                localStorage.setItem('rifaplus_ordenes_admin', JSON.stringify(ordenes));
+                cargarOrdenes();
+                alert(`❌ Orden ${ordenes[idx].ordenId} rechazada`);
+            }
+        }
+
+        function verDetalles(idx) {
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+            const orden = ordenes[idx];
+
+            const fecha = new Date(orden.fecha).toLocaleDateString('es-MX', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            let html = `
+                <div class="order-detail-row">
+                    <div>
+                        <div class="detail-item-label">Orden ID</div>
+                        <div class="detail-item-value">${orden.ordenId}</div>
+                    </div>
+                    <div>
+                        <div class="detail-item-label">Estado</div>
+                        <div class="detail-item-value"><span class="order-status status-${orden.estado || 'pendiente'}">${orden.estado || 'Pendiente'}</span></div>
+                    </div>
+                </div>
+                <div class="order-detail-row">
+                    <div>
+                        <div class="detail-item-label">Cliente</div>
+                        <div class="detail-item-value">${orden.cliente.nombre} ${orden.cliente.apellidos}</div>
+                    </div>
+                    <div>
+                        <div class="detail-item-label">WhatsApp</div>
+                        <div class="detail-item-value">${orden.cliente.whatsapp}</div>
+                    </div>
+                </div>
+                <div class="order-detail-row">
+                    <div>
+                        <div class="detail-item-label">Total de Boletos</div>
+                        <div class="detail-item-value">${orden.boletos.length}</div>
+                    </div>
+                    <div>
+                        <div class="detail-item-label">Monto Total</div>
+                        <div class="detail-item-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</div>
+                    </div>
+                </div>
+                <div class="order-detail-row">
+                    <div>
+                        <div class="detail-item-label">Banco</div>
+                        <div class="detail-item-value">${orden.cuenta.bank}</div>
+                    </div>
+                    <div>
+                        <div class="detail-item-label">Fecha de Orden</div>
+                        <div class="detail-item-value">${fecha}</div>
+                    </div>
+                </div>
+                <div class="order-detail-row">
+                    <div style="grid-column: 1/-1;">
+                        <div class="detail-item-label">Números de Boletos</div>
+                        <div class="detail-item-value">${orden.boletos.join(', ')}</div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('detailContent').innerHTML = html;
+            document.getElementById('detailModal').classList.add('show');
+        }
+
+        function cerrarModal() {
+            document.getElementById('detailModal').classList.remove('show');
+        }
+
+        function aplicarFiltros() {
+            const status = document.getElementById('filterStatus').value;
+            const search = document.getElementById('filterSearch').value.toLowerCase();
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+
+            const filtradas = ordenes.filter(orden => {
+                const statusMatch = !status || orden.estado === status || (!orden.estado && status === 'pendiente');
+                const searchMatch = !search || 
+                    orden.ordenId.toLowerCase().includes(search) ||
+                    orden.cliente.nombre.toLowerCase().includes(search) ||
+                    orden.cliente.apellidos.toLowerCase().includes(search) ||
+                    orden.cliente.whatsapp.toLowerCase().includes(search);
+                return statusMatch && searchMatch;
+            });
+
+            const container = document.getElementById('ordersContainer');
+            if (filtradas.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>📭 No hay órdenes que coincidan con los filtros</p></div>';
+                return;
+            }
+
+            container.innerHTML = filtradas.map((orden, idx) => {
+                const actualIdx = ordenes.findIndex(o => o.ordenId === orden.ordenId);
+                return `
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div class="order-id">${orden.ordenId}</div>
+                            <span class="order-status status-${orden.estado || 'pendiente'}">${orden.estado || 'Pendiente'}</span>
+                        </div>
+                        <div class="order-client">
+                            <div class="client-name">${orden.cliente.nombre} ${orden.cliente.apellidos}</div>
+                            <div class="client-phone">☎️ ${orden.cliente.whatsapp}</div>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Boletos:</span>
+                                <span class="detail-value">${orden.boletos.length}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Total:</span>
+                                <span class="detail-value">$${orden.totales.totalFinal || orden.totales.subtotal || 0}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Banco:</span>
+                                <span class="detail-value">${orden.cuenta.bank}</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-view" onclick="verDetalles(${actualIdx})">Ver Detalles</button>
+                            ${orden.estado !== 'confirmada' ? `<button class="btn-confirm" onclick="confirmarOrden(${actualIdx})">✓ Confirmar</button>` : ''}
+                            ${orden.estado !== 'rechazada' ? `<button class="btn-reject" onclick="rechazarOrden(${actualIdx})">✗ Rechazar</button>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function exportarOrdenesToCSV() {
+            const ordenes = JSON.parse(localStorage.getItem('rifaplus_ordenes_admin') || '[]');
+            if (ordenes.length === 0) {
+                alert('No hay órdenes para exportar');
+                return;
+            }
+
+            let csv = 'Orden ID,Cliente,WhatsApp,Boletos,Total,Banco,Estado,Fecha\n';
+            ordenes.forEach(orden => {
+                const fecha = new Date(orden.fecha).toLocaleDateString('es-MX');
+                csv += `${orden.ordenId},"${orden.cliente.nombre} ${orden.cliente.apellidos}",${orden.cliente.whatsapp},${orden.boletos.length},$${orden.totales.totalFinal || orden.totales.subtotal},${orden.cuenta.bank},${orden.estado || 'Pendiente'},${fecha}\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ordenes-rifaplus-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function limpiarLocalStorage() {
+            if (confirm('⚠️ ¿Estás seguro de que deseas limpiar todas las órdenes? Esta acción no se puede deshacer.')) {
+                localStorage.removeItem('rifaplus_ordenes_admin');
+                cargarOrdenes();
+                alert('✓ Datos limpiados');
+            }
+        }
+
+        // Cerrar modal al hacer click fuera
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                cerrarModal();
+            }
+        });
+
+        // Inicializar
+        inicializarConDatos();
+        cargarOrdenes();
+
+        // Recargar cada 10 segundos
+        setInterval(cargarOrdenes, 10000);
+    </script>
+</body>
+</html>
