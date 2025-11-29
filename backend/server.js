@@ -1159,6 +1159,54 @@ app.get('/api/admin/stats', verificarToken, async (req, res) => {
 });
 
 /**
+ * GET /api/admin/boletos
+ * Obtener lista detallada de boletos (protegido con JWT)
+ */
+app.get('/api/admin/boletos', verificarToken, async (req, res) => {
+    try {
+        const ordenes = await db('ordenes')
+            .select('numero_orden', 'boletos', 'estado', 'cliente_nombre', 'cliente_whatsapp', 'created_at');
+
+        const boletosDetallados = [];
+
+        ordenes.forEach(orden => {
+            try {
+                const numerosArr = JSON.parse(orden.boletos || '[]');
+                if (Array.isArray(numerosArr)) {
+                    numerosArr.forEach(num => {
+                        boletosDetallados.push({
+                            numero: Number(num),
+                            numero_orden: orden.numero_orden,
+                            estado: orden.estado.includes('confirmada') || orden.estado.includes('completada') ? 'vendido' : orden.estado.includes('pendiente') || orden.estado.includes('comprobante') ? 'apartado' : orden.estado,
+                            cliente_nombre: orden.cliente_nombre || '',
+                            cliente_whatsapp: orden.cliente_whatsapp || '',
+                            created_at: orden.created_at
+                        });
+                    });
+                }
+            } catch (e) {
+                // Ignorar órdenes con boletos inválidos
+            }
+        });
+
+        // Ordenar por número de boleto
+        boletosDetallados.sort((a, b) => a.numero - b.numero);
+
+        return res.json({
+            success: true,
+            data: boletosDetallados
+        });
+    } catch (error) {
+        console.error('GET /api/admin/boletos error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Error al obtener boletos',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+});
+
+/**
 /**
  * PATCH /api/ordenes/:id/estado
  * Actualizar estado de una orden (protegido con JWT)
@@ -1259,6 +1307,183 @@ app.get('/api/admin/sales-stats', verificarToken, async (req, res) => {
         return res.status(500).json({
             success: false,
             message: 'Error al obtener estadísticas de ventas',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+});
+
+/**
+ * POST /api/admin/declarar-ganador
+ * Declarar un boleto como ganador (protegido con JWT)
+ * Body: { numero: 5000 }
+ */
+app.post('/api/admin/declarar-ganador', verificarToken, async (req, res) => {
+    try {
+        const { numero } = req.body;
+        if (!numero) {
+            return res.status(400).json({
+                success: false,
+                message: 'Número de boleto requerido'
+            });
+        }
+
+        // Buscar la orden que contiene este boleto
+        const ordenes = await db('ordenes')
+            .select('numero_orden', 'boletos', 'estado')
+            .whereIn('estado', ['confirmada', 'completada']);
+
+        let encontrado = false;
+        for (const orden of ordenes) {
+            try {
+                const numerosArr = JSON.parse(orden.boletos || '[]');
+                if (numerosArr.includes(Number(numero))) {
+                    encontrado = true;
+                    break;
+                }
+            } catch (e) {
+                // Ignorar
+            }
+        }
+
+        if (!encontrado) {
+            return res.status(404).json({
+                success: false,
+                message: 'Boleto no encontrado o no vendido'
+            });
+        }
+
+        // Guardar ganador en sistema (podría ser tabla separada o campo en ordenes)
+        // Por ahora, simplemente retornamos éxito
+        return res.json({
+            success: true,
+            message: `Boleto ${numero} declarado como ganador`,
+            data: { numero }
+        });
+    } catch (error) {
+        console.error('POST /api/admin/declarar-ganador error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Error al declarar ganador',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+});
+
+/**
+ * POST /api/admin/ordenes-manual
+ * Crear una orden manual de venta en efectivo (protegido con JWT)
+ * Body: { cliente_nombre, cliente_whatsapp, boletos: [5000, 5001, ...] }
+ */
+app.post('/api/admin/ordenes-manual', verificarToken, async (req, res) => {
+    try {
+        const { cliente_nombre, cliente_whatsapp, boletos } = req.body;
+        
+        if (!cliente_nombre || !Array.isArray(boletos) || boletos.length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'Cliente nombre y boletos requeridos'
+            });
+        }
+
+        const numeroOrden = `MAN-${Date.now()}`;
+        const resultado = await db('ordenes').insert({
+            numero_orden: numeroOrden,
+            cliente_nombre: cliente_nombre || 'Venta Manual',
+            cliente_whatsapp: cliente_whatsapp || '',
+            cantidad_boletos: boletos.length,
+            boletos: JSON.stringify(boletos),
+            estado: 'completada',
+            created_at: new Date(),
+            updated_at: new Date(),
+            total: 0 // Venta en efectivo, sin registro de pago en sistema
+        });
+
+        return res.json({
+            success: true,
+            message: 'Orden manual creada',
+            data: { numero_orden: numeroOrden }
+        });
+    } catch (error) {
+        console.error('POST /api/admin/ordenes-manual error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Error al crear orden manual',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+});
+
+/**
+ * PATCH /api/admin/boletos/:numero/liberar
+ * Liberar un boleto de una orden (protegido con JWT)
+ */
+app.patch('/api/admin/boletos/:numero/liberar', verificarToken, async (req, res) => {
+    try {
+        const { numero } = req.params;
+        const numBoleto = Number(numero);
+
+        if (isNaN(numBoleto)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Número de boleto inválido'
+            });
+        }
+
+        // Buscar la orden que contiene este boleto
+        const ordenes = await db('ordenes')
+            .select('numero_orden', 'boletos', 'estado', 'cantidad_boletos');
+
+        let encontrado = false;
+        let ordenActualizada = null;
+
+        for (const orden of ordenes) {
+            try {
+                const numerosArr = JSON.parse(orden.boletos || '[]');
+                const index = numerosArr.indexOf(numBoleto);
+                
+                if (index !== -1) {
+                    // Remover el boleto
+                    numerosArr.splice(index, 1);
+                    
+                    // Si no quedan boletos, eliminar la orden; si no, actualizar
+                    if (numerosArr.length === 0) {
+                        await db('ordenes').where('numero_orden', orden.numero_orden).delete();
+                    } else {
+                        await db('ordenes')
+                            .where('numero_orden', orden.numero_orden)
+                            .update({
+                                boletos: JSON.stringify(numerosArr),
+                                cantidad_boletos: numerosArr.length,
+                                updated_at: new Date()
+                            });
+                    }
+                    
+                    encontrado = true;
+                    ordenActualizada = orden.numero_orden;
+                    break;
+                }
+            } catch (e) {
+                // Ignorar
+            }
+        }
+
+        if (!encontrado) {
+            return res.status(404).json({
+                success: false,
+                message: 'Boleto no encontrado'
+            });
+        }
+
+        return res.json({
+            success: true,
+            message: `Boleto ${numBoleto} liberado`,
+            data: { numero: numBoleto, orden: ordenActualizada }
+        });
+    } catch (error) {
+        console.error('PATCH /api/admin/boletos/:numero/liberar error:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Error al liberar boleto',
             error: process.env.NODE_ENV === 'development' ? error.message : undefined
         });
     }

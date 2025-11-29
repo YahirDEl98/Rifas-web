@@ -751,6 +751,9 @@
     </div>
 
     <script>
+        // ===== CONFIG =====
+        const API_BASE = 'http://localhost:3000';
+
         // ===== GLOBALS =====
         let allBoletos = [];
         let ganador = null;
@@ -824,7 +827,7 @@
 
         async function loadBoletos() {
             try {
-                const res = await fetchWithAuth('/api/admin/boletos?limit=0');
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/boletos?limit=0`);
                 if (!res || !res.ok) return;
                 const json = await res.json();
                 allBoletos = (Array.isArray(json.data) ? json.data : Array.isArray(json) ? json : []).map(normalizeBoleto);
@@ -881,7 +884,7 @@
             if (!confirm(`¿Declarar ganador el boleto ${num}? Irreversible.`)) return;
 
             try {
-                const res = await fetchWithAuth('/api/admin/declarar-ganador', { method: 'POST', body: JSON.stringify({ numero: num }) });
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/declarar-ganador`, { method: 'POST', body: JSON.stringify({ numero: num }) });
                 if (res && res.ok) {
                     ganador = { numero: num, cliente: b.cliente_nombre };
                     document.getElementById('ganadorTexto').textContent = `Boleto ${num} - ${b.cliente_nombre || 'Cliente'}`;
@@ -913,7 +916,7 @@
             };
 
             try {
-                const res = await fetchWithAuth('/api/admin/ordenes-manual', { method: 'POST', body: JSON.stringify(payload) });
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/ordenes-manual`, { method: 'POST', body: JSON.stringify(payload) });
                 if (res && res.ok) {
                     alert(`Venta registrada: ${nums.length} boletos al cliente ${nombre}`);
                     closeModal('venta');
@@ -931,7 +934,7 @@
             if (!confirm(`¿Liberar boleto ${num}?`)) return;
 
             try {
-                const res = await fetchWithAuth(`/api/admin/boletos/${num}/liberar`, { method: 'PATCH' });
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/boletos/${num}/liberar`, { method: 'PATCH' });
                 if (res && res.ok) {
                     alert('Boleto liberado');
                     closeModal('liberar');
