@@ -14,7 +14,6 @@ function abrirOrdenFormal(cuenta) {
             nombre: cliente.nombre,
             apellidos: cliente.apellidos,
             whatsapp: cliente.whatsapp,
-            email: cliente.email || `${cliente.whatsapp.replace(/[^0-9]/g,'') || Date.now()}@noemail.local`,
             estado: cliente.estado || '',
             ciudad: cliente.ciudad || ''
         },
@@ -56,87 +55,116 @@ function renderizarOrdenFormal(orden) {
     const fechaFormato = fecha.toLocaleDateString('es-ES', {
         year: 'numeric',
         month: 'long',
-        day: 'numeric',
+        day: 'numeric'
+    });
+    const horaFormato = fecha.toLocaleTimeString('es-ES', {
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        hour12: false
     });
 
-    // Compact formal layout: logo left, ordenId right, compact client info, concepto y total, payment method (bank, account, referencia, beneficiary)
-    // Logo solo para la orden de pago PDF
     const logoUrl = 'images/sorteos-yepe-logo.png';
-    const cantidadBoletos = (orden.boletos || []).length;
+    const nombreOrganizador = window.rifaplusConfig?.nombreOrganizador || 'Organizador';
     
-    // Compact representation of boletos (ranges)
-    function compactRanges(arr, maxLen = 80) {
-        if (!Array.isArray(arr) || arr.length === 0) return '';
-        const nums = arr.slice().map(n => Number(n)).filter(n => !isNaN(n)).sort((a,b) => a - b);
-        const ranges = [];
-        let start = nums[0], end = nums[0];
-        for (let i = 1; i < nums.length; i++) {
-            const n = nums[i];
-            if (n === end || n === end + 1) {
-                end = n;
-            } else {
-                ranges.push(start === end ? String(start) : `${start}-${end}`);
-                start = n;
-                end = n;
-            }
-        }
-        ranges.push(start === end ? String(start) : `${start}-${end}`);
-        let out = ranges.join(',');
-        if (out.length > maxLen) {
-            // try to fit partial output and show total count
-            const parts = [];
-            let len = 0;
-            for (const r of ranges) {
-                if (len + r.length + (parts.length > 0 ? 1 : 0) > maxLen - 10) break;
-                parts.push(r);
-                len += r.length + (parts.length > 1 ? 1 : 0);
-            }
-            const partsCount = parts.reduce((s, p) => s + (p.includes('-') ? (Number(p.split('-')[1]) - Number(p.split('-')[0]) + 1) : 1), 0);
-            out = parts.join(',') + `... (+${nums.length - partsCount} más)`;
-        }
-        return out;
-    }
-
-    const compactBoletosStr = compactRanges(orden.boletos || [], 90);
-    const concepto = `Boletos: ${compactBoletosStr}`;
-    const total = (orden.totales && (orden.totales.totalFinal || orden.totales.subtotal)) ? (orden.totales.totalFinal || orden.totales.subtotal) : 0;
+    // Obtener todos los boletos (sin compactar - mostrar todos los números)
+    const boletosArray = (orden.boletos || []).map(b => Number(b)).filter(n => !isNaN(n)).sort((a, b) => a - b);
+    const boletosStr = boletosArray.join(', ');
+    
+    // Totales
+    const subtotal = orden.totales?.subtotal || 0;
+    const descuento = orden.totales?.descuento || 0;
+    const total = orden.totales?.totalFinal || orden.totales?.subtotal || 0;
 
     const html = `
-        <div class="orden-documento" id="documentoPDF" style="font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'; color:#111; padding:12px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
-                <div style="display:flex; align-items:center; gap:12px;">
-                    <img src="${logoUrl}" alt="logo" style="height:144px; width:auto; object-fit:contain;" />
-                    <div style="font-weight:700; font-size:0.95rem;">${window.rifaplusConfig.nombreOrganizador || 'RifaPlus'}</div>
+        <div class="orden-documento" id="documentoPDF" style="font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'; color:#111; padding:24px; max-width:100%; background:white;">
+            
+            <!-- ENCABEZADO: Logo Grande + Nombre Organizador (Izquierda) + ID Orden (Derecha) -->
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:24px; padding-bottom:16px; border-bottom:3px solid #7C3AED;">
+                <div style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+                    <img src="${logoUrl}" alt="logo" style="height:120px; width:auto; object-fit:contain;" />
+                    <div style="font-weight:800; font-size:1.15rem; line-height:1.2; color:#111;">${nombreOrganizador}</div>
                 </div>
                 <div style="text-align:right;">
-                    <div style="font-size:0.75rem; color:#6B7280;">Orden</div>
-                    <div style="font-weight:800; font-family: 'Courier New', monospace;">${orden.ordenId}</div>
+                    <div style="font-size:0.85rem; color:#6B7280; font-weight:600; text-transform:uppercase; margin-bottom:4px;">Orden de Pago</div>
+                    <div style="font-weight:900; font-family: 'Courier New', monospace; font-size:1.4rem; color:#7C3AED; white-space:nowrap; margin-bottom:12px;">${orden.ordenId}</div>
+                    <div style="font-size:0.8rem; color:#6B7280; margin-bottom:2px;">📅 ${fechaFormato}</div>
+                    <div style="font-size:0.8rem; color:#6B7280;">⏰ ${horaFormato}</div>
                 </div>
             </div>
 
-            <div style="margin-top:10px; display:flex; gap:10px; align-items:center; justify-content:space-between;">
-                <div style="font-size:0.9rem;">
-                    <div style="font-weight:700;">${orden.cliente.nombre || ''} ${orden.cliente.apellidos || ''}</div>
-                    <div style="font-size:0.85rem; color:#6B7280;">${orden.cliente.whatsapp || '-'}</div>
+            <!-- DATOS DEL CLIENTE -->
+            <div style="margin-bottom:20px;">
+                <div style="font-weight:700; font-size:0.95rem; margin-bottom:10px; color:#111; text-transform:uppercase; font-size:0.9rem; letter-spacing:0.5px;">Datos del Cliente</div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; font-size:0.9rem; background:#F9FAFB; padding:12px; border-radius:6px;">
+                    <div>
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Nombre</div>
+                        <div style="font-weight:600;">${orden.cliente.nombre || '-'}</div>
+                    </div>
+                    <div>
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Apellidos</div>
+                        <div style="font-weight:600;">${orden.cliente.apellidos || '-'}</div>
+                    </div>
+                    <div style="grid-column: 1 / -1;">
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">WhatsApp</div>
+                        <div style="font-weight:600;">${orden.cliente.whatsapp || '-'}</div>
+                    </div>
                 </div>
-                <div style="font-size:0.85rem; color:#6B7280;">Emitida: ${fechaFormato}</div>
             </div>
 
-            <div style="margin-top:12px; padding:10px 0; border-top:1px solid #F3F4F6; border-bottom:1px solid #F3F4F6; display:flex; justify-content:space-between; align-items:center; gap:8px;">
-                <div style="font-size:0.85rem; color:#374151; max-width:70%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${concepto}</div>
-                <div style="font-weight:800; font-size:1rem; color:#111;">$${Number(total).toFixed(2)}</div>
+            <!-- RESUMEN DE COMPRA -->
+            <div style="margin-bottom:20px;">
+                <div style="font-weight:700; font-size:0.95rem; margin-bottom:10px; color:#111; text-transform:uppercase; font-size:0.9rem; letter-spacing:0.5px;">Resumen de Compra</div>
+                <div style="background:#F9FAFB; border:1px solid #E5E7EB; border-radius:6px; padding:14px; font-size:0.9rem;">
+                    <div style="margin-bottom:12px;">
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:4px;">Boletos Adquiridos (${boletosArray.length})</div>
+                        <div style="font-family: 'Courier New', monospace; font-size:0.85rem; color:#111; line-height:1.5; word-wrap:break-word; white-space:normal;">${boletosStr}</div>
+                    </div>
+                    <div style="border-top:2px solid #E5E7EB; padding-top:12px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.9rem;">
+                            <span style="color:#6B7280;">Subtotal:</span>
+                            <span style="font-weight:600;">$${Number(subtotal).toFixed(2)}</span>
+                        </div>
+                        ${descuento > 0 ? `
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.9rem;">
+                            <span style="color:#6B7280;">Descuento:</span>
+                            <span style="font-weight:600; color:#10B981;">-$${Number(descuento).toFixed(2)}</span>
+                        </div>
+                        ` : ''}
+                        <div style="display:flex; justify-content:space-between; font-weight:900; font-size:1.15rem; color:#111; background:linear-gradient(135deg, #7C3AED15 0%, #6D28D915 100%); padding:8px; border-radius:4px;">
+                            <span>TOTAL A PAGAR:</span>
+                            <span style="color:#7C3AED;">$${Number(total).toFixed(2)}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-top:10px;">
-                <div style="font-weight:700; font-size:0.9rem; margin-bottom:6px;">Método de pago</div>
-                <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="font-weight:700;">${orden.cuenta.bank || '-'}</div>
-                    <div style="font-family: 'Courier New', monospace; font-size:0.95rem;">${orden.cuenta.accountNumber || '-'}</div>
-                    <div style="font-size:0.88rem; color:#6B7280;">Referencia: ${orden.referencia}</div>
-                    <div style="font-size:0.88rem; color:#374151;">Beneficiario: ${orden.cuenta.beneficiary || '-'}</div>
+            <!-- MÉTODO DE PAGO -->
+            <div style="margin-bottom:20px;">
+                <div style="font-weight:700; font-size:0.95rem; margin-bottom:10px; color:#111; text-transform:uppercase; font-size:0.9rem; letter-spacing:0.5px;">Información de Pago</div>
+                <div style="background:#F9FAFB; border:1px solid #E5E7EB; border-radius:6px; padding:14px; font-size:0.9rem;">
+                    <div style="margin-bottom:10px;">
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Banco</div>
+                        <div style="font-weight:700; font-size:1rem;">${orden.cuenta?.bank || '-'}</div>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Número de Cuenta</div>
+                        <div style="font-family: 'Courier New', monospace; font-weight:700; font-size:0.95rem;">${orden.cuenta?.accountNumber || '-'}</div>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Referencia de Pago</div>
+                        <div style="font-family: 'Courier New', monospace; font-weight:700; font-size:0.95rem;">${orden.referencia || '-'}</div>
+                    </div>
+                    <div>
+                        <div style="color:#6B7280; font-size:0.8rem; font-weight:600; margin-bottom:2px;">Beneficiario</div>
+                        <div style="font-weight:600;">${orden.cuenta?.beneficiary || '-'}</div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- MENSAJE FINAL -->
+            <div style="text-align:center; background:linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%); color:white; border-radius:8px; padding:18px; font-size:0.95rem;">
+                <div style="font-weight:700; margin-bottom:6px; font-size:1rem;">✉️ Próximo Paso</div>
+                <div style="font-size:0.9rem; opacity:0.95; line-height:1.5;">Realiza la transferencia y envía el comprobante para confirmar tu compra. <br><strong>¡Mucha suerte! 🍀</strong></div>
             </div>
         </div>
     `;
@@ -152,11 +180,13 @@ function makeOrderMessage(ord) {
     const cuenta = ord.cuenta ? ord.cuenta.accountNumber : '';
     const beneficiario = ord.cuenta ? ord.cuenta.beneficiary : '';
     const referencia = ord.referencia || '';
+    const subtotal = ord.totales ? (ord.totales.subtotal || 0) : 0;
+    const descuento = ord.totales ? (ord.totales.descuento || 0) : 0;
     const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.subtotal || 0) : 0;
     const boletos = ord.boletos || [];
     
-    // Compactar boletos igual que en la orden visual
-    function compactRanges(arr, maxLen = 90) {
+    // Compactar boletos: devolver siempre todos los rangos (no truncar)
+    function compactRanges(arr) {
         if (!Array.isArray(arr) || arr.length === 0) return '-';
         const nums = arr.slice().map(n => Number(n)).filter(n => !isNaN(n)).sort((a,b) => a - b);
         const ranges = [];
@@ -172,22 +202,10 @@ function makeOrderMessage(ord) {
             }
         }
         ranges.push(start === end ? String(start) : `${start}-${end}`);
-        let out = ranges.join(',');
-        if (out.length > maxLen) {
-            const parts = [];
-            let len = 0;
-            for (const r of ranges) {
-                if (len + r.length + (parts.length > 0 ? 1 : 0) > maxLen - 10) break;
-                parts.push(r);
-                len += r.length + (parts.length > 1 ? 1 : 0);
-            }
-            const partsCount = parts.reduce((s, p) => s + (p.includes('-') ? (Number(p.split('-')[1]) - Number(p.split('-')[0]) + 1) : 1), 0);
-            out = parts.join(',') + `... (+${nums.length - partsCount} más)`;
-        }
-        return out;
+        return ranges.join(',');
     }
     
-    const compactBoletosStr = compactRanges(boletos, 90);
+    const compactBoletosStr = compactRanges(boletos);
     const fecha = new Date(ord.fecha);
     const fechaFormato = fecha.toLocaleDateString('es-ES', {
         year: 'numeric',
@@ -196,28 +214,31 @@ function makeOrderMessage(ord) {
         hour: '2-digit',
         minute: '2-digit'
     });
-    
+    const origin = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : '';
+    const misBoletosUrl = cliente.whatsapp ? `${origin}/mis-boletos.html?whatsapp=${encodeURIComponent(cliente.whatsapp)}` : `${origin}/mis-boletos.html`;
+
     return `ORDEN DE PAGO
-------------------------------
 ID de orden: ${ordenId}
 Emitida: ${fechaFormato}
 
 DATOS DEL CLIENTE
 Nombre: ${cliente.nombre || ''} ${cliente.apellidos || ''}
 WhatsApp: ${cliente.whatsapp || '-'}
-Email: ${cliente.email || '-'}
 Estado: ${cliente.estado || '-'}
 Ciudad: ${cliente.ciudad || '-'}
 
 DETALLES DE COMPRA
 Boletos: ${compactBoletosStr}
-Total a pagar: $${Number(monto).toFixed(2)}
+Subtotal: $${Number(subtotal).toFixed(2)}
+${descuento > 0 ? `Descuento: -$${Number(descuento).toFixed(2)}\n` : ''}Total a pagar: $${Number(monto).toFixed(2)}
 
 MÉTODO DE PAGO
 Banco: ${banco}
 Número de cuenta: ${cuenta}
 Referencia: ${referencia}
 Beneficiario: ${beneficiario}
+
+Ver tu orden y el estado de tus boletos: ${misBoletosUrl}
 
 ------------------------------
 Por favor, envía el comprobante de pago para confirmar la compra de tus boletos y asegurar tu participación en la rifa.
@@ -241,9 +262,6 @@ function imprimirOrden() {
     }
 
     try {
-        // Debugging: Check if html2canvas is loaded
-        console.log('Checking if html2canvas is available:', typeof window.html2canvas);
-
         if (typeof window.html2canvas !== 'function') {
             rifaplusUtils.showFeedback('❌ html2canvas no está disponible', 'error');
             console.error('html2canvas is not available. Ensure the script is loaded correctly.');
@@ -311,6 +329,36 @@ async function enviarOrdenPorWhatsApp() {
         });
 
         const guardarJson = await guardarResp.json();
+        
+        // Manejar conflicto de boletos (409)
+        if (guardarResp.status === 409 && guardarJson.boletosConflicto) {
+            const boletosEnConflicto = guardarJson.boletosConflicto.join(', ');
+            const mensaje = `❌ Los boletos ${boletosEnConflicto} ya fueron comprados por otro cliente.\n\nPor favor, selecciona números diferentes.`;
+            rifaplusUtils.showFeedback(mensaje, 'error');
+            
+            // Volver a la pantalla de selección de boletos
+            cerrarOrdenFormal();
+            
+            // Remover boletos en conflicto de la selección
+            const boletoSeleccionados = new Set(
+                JSON.parse(localStorage.getItem('rifaplusSelectedNumbers') || '[]')
+            );
+            guardarJson.boletosConflicto.forEach(boleto => {
+                boletoSeleccionados.delete(boleto);
+            });
+            localStorage.setItem('rifaplusSelectedNumbers', JSON.stringify(Array.from(boletoSeleccionados)));
+            
+            // Actualizar UI si estamos en compra.html
+            if (typeof actualizarContadorCarritoGlobal === 'function') {
+                actualizarContadorCarritoGlobal();
+            }
+            if (typeof fetchBoletosPublic === 'function') {
+                fetchBoletosPublic();
+            }
+            
+            return;
+        }
+        
         if (!guardarJson.success) throw new Error('No se pudo guardar la orden');
 
         const ordenUrl = guardarJson.url;
@@ -326,8 +374,8 @@ async function enviarOrdenPorWhatsApp() {
             const monto = ord.totales ? (ord.totales.totalFinal || ord.totales.subtotal || 0) : 0;
             const boletos = ord.boletos || [];
             
-            // Función para compactar boletos (la misma que usas en la orden)
-            function compactRanges(arr, maxLen = 90) {
+            // Función para compactar boletos (no truncada)
+            function compactRanges(arr) {
                 if (!Array.isArray(arr) || arr.length === 0) return '-';
                 const nums = arr.slice().map(n => Number(n)).filter(n => !isNaN(n)).sort((a,b) => a - b);
                 const ranges = [];
@@ -343,19 +391,7 @@ async function enviarOrdenPorWhatsApp() {
                     }
                 }
                 ranges.push(start === end ? String(start) : `${start}-${end}`);
-                let out = ranges.join(',');
-                if (out.length > maxLen) {
-                    const parts = [];
-                    let len = 0;
-                    for (const r of ranges) {
-                        if (len + r.length + (parts.length > 0 ? 1 : 0) > maxLen - 10) break;
-                        parts.push(r);
-                        len += r.length + (parts.length > 1 ? 1 : 0);
-                    }
-                    const partsCount = parts.reduce((s, p) => s + (p.includes('-') ? (Number(p.split('-')[1]) - Number(p.split('-')[0]) + 1) : 1), 0);
-                    out = parts.join(',') + `... (+${nums.length - partsCount} más)`;
-                }
-                return out;
+                return ranges.join(',');
             }
             
             const compactBoletosStr = compactRanges(boletos, 90);
@@ -429,6 +465,23 @@ async function enviarOrdenPorWhatsApp() {
         localStorage.setItem('rifaplus_orden_confirmada', JSON.stringify(confirmacion));
 
         rifaplusUtils.showFeedback('✅ Abriendo WhatsApp para enviar la orden. Confirma el envío en la app.', 'success');
+        
+        // 🔥 LIMPIAR CARRITO DESPUÉS DE ENVIAR ORDEN
+        // Remover boletos del localStorage para que no se vuelvan a comprar
+        localStorage.removeItem('rifaplusSelectedNumbers');
+        localStorage.setItem('rifaplusOrdenEnviada', 'true'); // Marcador para limpiar en reload
+        if (typeof selectedNumbersGlobal !== 'undefined' && selectedNumbersGlobal.clear) {
+            selectedNumbersGlobal.clear();
+        }
+        
+        // Actualizar UI del carrito
+        if (typeof actualizarVistaCarritoGlobal === 'function') {
+            actualizarVistaCarritoGlobal();
+        }
+        if (typeof actualizarContadorCarritoGlobal === 'function') {
+            actualizarContadorCarritoGlobal();
+        }
+        
         setTimeout(() => {
             cerrarOrdenFormal();
             window.location.href = 'index.html';

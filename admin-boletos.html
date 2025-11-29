@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletos - Panel Admin</title>
+    <link rel="icon" href="images/sorteos-yepe-logo.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=20251128">
+    <script src="js/config.js"></script>
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #5a2abf;
+            --primary-light: #F3E9FF;
+            --success: #31A24C;
+            --danger: #E4163A;
+            --warning: #B4740C;
+            --text-dark: #0A0E27;
+            --text-light: #65676B;
+            --text-lighter: #8A8D91;
+            --bg-light: #F0F2F5;
+            --bg-white: #FFFFFF;
+            --border-color: #CED0D4;
+            --divider: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Ubuntu', sans-serif;
+            background: #F8F9FA;
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .header-title-main {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .header-title-sub {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .logout-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logout-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* ===== STATS PANEL ===== */
+        .stats-panel {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.4rem;
+            background: #f3f4f6;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .stat-total { background: rgba(124,58,237,0.08); color: var(--primary); }
+        .stat-vendidos { background: rgba(49,162,76,0.08); color: var(--success); }
+        .stat-apartados { background: rgba(180,116,12,0.12); color: #B4740C; }
+        .stat-disponibles { background: rgba(49,162,76,0.12); color: var(--success); }
+
+        .ganador-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.4rem;
+            background: rgba(180,116,12,0.12);
+            color: #B4740C;
+            font-weight: 700;
+            margin-left: auto;
+        }
+
+        /* ===== SEARCH SECTION ===== */
+        .search-section {
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-section h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.75rem;
+            align-items: flex-end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .form-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-lighter);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            background: var(--bg-white);
+            color: var(--text-dark);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+        }
+
+        .btn-primary {
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== SEARCH RESULT ===== */
+        .search-result {
+            background: var(--primary-light);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--primary);
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .search-result.active {
+            display: block;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+
+        .result-value {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+
+        /* ===== ACTIONS SECTION ===== */
+        .actions-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-card {
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .action-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .action-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .action-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .action-card .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== AUDIT TABLE ===== */
+        .audit-section {
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .audit-section h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .audit-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            align-items: flex-end;
+        }
+
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .audit-table thead {
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .audit-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-lighter);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-size: 0.75rem;
+        }
+
+        .audit-table tbody tr {
+            border-bottom: 1px solid var(--divider);
+            transition: background 0.2s ease;
+        }
+
+        .audit-table tbody tr:hover {
+            background: #F8F9FA;
+        }
+
+        .audit-table td {
+            padding: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .numero-bold {
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .estado-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.3rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-disponible {
+            background: rgba(49, 162, 76, 0.15);
+            color: var(--success);
+        }
+
+        .badge-vendido {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--primary);
+        }
+
+        .badge-apartado {
+            background: rgba(180, 116, 12, 0.15);
+            color: var(--warning);
+        }
+
+        /* ===== MODAL ===== */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-white);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            max-width: 540px;
+            width: 95%;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .modal-form-group {
+            margin-bottom: 1rem;
+        }
+
+        .modal-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-lighter);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            font-family: inherit;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-cancel {
+            padding: 0.5rem 1rem;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        .btn-cancel:hover {
+            background: var(--border-color);
+        }
+
+        .info-text {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-right {
+                width: 100%;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+                align-items: stretch;
+            }
+
+            .search-form .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .actions-section {
+                grid-template-columns: 1fr;
+            }
+
+            .audit-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-container">
+                    <img src="images/sorteos-yepe-logo.png" alt="Logo">
+                </div>
+                <div class="header-title">
+                    <div class="header-title-main">Boletos</div>
+                    <div class="header-title-sub">Gestión Técnica</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="btnExportAudit" class="nav-btn"><i class="fas fa-download"></i> Exportar</button>
+                <a href="admin-dashboard.html" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i> Panel
+                </a>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- ESTADÍSTICAS -->
+        <div class="stats-panel" id="statsBanner">
+            <div class="stat-item stat-total">Total: <span id="statTotal">0</span></div>
+            <div class="stat-item stat-vendidos">✓ Vendidos: <span id="statVendidos">0</span></div>
+            <div class="stat-item stat-apartados">⏱ Apartados: <span id="statApartados">0</span></div>
+            <div class="stat-item stat-disponibles">📍 Disponibles: <span id="statDisponibles">0</span></div>
+            <div id="ganadorInfo" class="ganador-badge" style="display:none">
+                <i class="fas fa-trophy"></i> Ganador: <span id="ganadorTexto"></span>
+            </div>
+        </div>
+
+        <!-- BÚSQUEDA RÁPIDA -->
+        <div class="search-section">
+            <h3><i class="fas fa-search"></i> Búsqueda rápida de boleto</h3>
+            <form class="search-form" id="searchForm">
+                <div class="form-group">
+                    <label class="form-label">Número de boleto</label>
+                    <input id="searchBoleto" type="number" class="form-input" placeholder="Ej: 5432" />
+                </div>
+                <button type="button" id="btnBuscarBoleto" class="btn-primary"><i class="fas fa-search"></i> Buscar</button>
+            </form>
+            <div id="searchResult" class="search-result">
+                <div class="result-row">
+                    <span class="result-label">Número:</span>
+                    <span class="result-value numero-bold" id="resultNumero">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Estado:</span>
+                    <span class="result-value" id="resultEstado">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Orden:</span>
+                    <span class="result-value" id="resultOrden">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Cliente:</span>
+                    <span class="result-value" id="resultCliente">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Fecha:</span>
+                    <span class="result-value" id="resultFecha">—</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCIONES PRINCIPALES -->
+        <div class="actions-section">
+            <div class="action-card">
+                <div class="action-icon">🏆</div>
+                <h4>Declarar Ganador</h4>
+                <p>Marca el boleto ganador de la rifa</p>
+                <button id="btnModalGanador" class="btn-primary"><i class="fas fa-crown"></i> Declarar</button>
+            </div>
+            <div class="action-card">
+                <div class="action-icon">💰</div>
+                <h4>Venta en Efectivo</h4>
+                <p>Registra ventas realizadas presencialmente</p>
+                <button id="btnModalVenta" class="btn-primary"><i class="fas fa-plus"></i> Nueva</button>
+            </div>
+            <div class="action-card">
+                <div class="action-icon">🔓</div>
+                <h4>Liberar Boleto</h4>
+                <p>Devuelve un boleto a disponible</p>
+                <button id="btnModalLiberar" class="btn-primary"><i class="fas fa-unlock"></i> Liberar</button>
+            </div>
+        </div>
+
+        <!-- AUDITORÍA POR RANGO -->
+        <div class="audit-section">
+            <h3><i class="fas fa-list"></i> Auditoría de boletos por rango</h3>
+            <div class="audit-controls">
+                <div class="form-group">
+                    <label class="form-label">Desde</label>
+                    <input id="auditDesde" type="number" class="form-input" placeholder="Ej: 5000" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Hasta</label>
+                    <input id="auditHasta" type="number" class="form-input" placeholder="Ej: 5100" />
+                </div>
+                <button id="btnAudit" class="btn-primary"><i class="fas fa-search"></i> Mostrar</button>
+            </div>
+            <table class="audit-table" id="auditTable" style="display:none">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Estado</th>
+                        <th>Orden</th>
+                        <th>Cliente / Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="auditBody"></tbody>
+            </table>
+            <div id="auditEmpty" style="text-align:center;padding:1rem;color:var(--text-light);display:none">
+                Sin resultados. Ingresa un rango válido.
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Declarar Ganador -->
+    <div id="modalGanador" class="modal-backdrop">
+        <div class="modal">
+            <h3><i class="fas fa-trophy" style="margin-right:0.5rem;color:var(--warning)"></i>Declarar Boleto Ganador</h3>
+            <div class="modal-form-group">
+                <label class="modal-label">Número ganador</label>
+                <input id="inputGanador" type="number" class="modal-input" placeholder="Ej: 7432" />
+                <p class="info-text">El boleto debe estar vendido/confirmado. Esta acción es irreversible.</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal('ganador')">Cancelar</button>
+                <button id="confirmGanador" class="btn-primary">Confirmar Ganador</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Nueva Venta Efectivo -->
+    <div id="modalVenta" class="modal-backdrop">
+        <div class="modal">
+            <h3><i class="fas fa-plus" style="margin-right:0.5rem;color:var(--primary)"></i>Nueva Venta en Efectivo</h3>
+            <div class="modal-form-group">
+                <label class="modal-label">Nombre del cliente</label>
+                <input id="ventaNombre" type="text" class="modal-input" />
+            </div>
+            <div class="modal-form-group">
+                <label class="modal-label">WhatsApp</label>
+                <input id="ventaWhats" type="text" class="modal-input" />
+            </div>
+            <div class="modal-form-group">
+                <label class="modal-label">Boletos (ej: 1001,1002 o 5000-5050)</label>
+                <input id="ventaBoletos" type="text" class="modal-input" placeholder="Separados por coma o rango" />
+                <p class="info-text">Se creará una orden confirmada. Los boletos deben estar disponibles.</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal('venta')">Cancelar</button>
+                <button id="confirmVenta" class="btn-primary">Registrar Venta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Liberar Boleto -->
+    <div id="modalLiberar" class="modal-backdrop">
+        <div class="modal">
+            <h3><i class="fas fa-unlock" style="margin-right:0.5rem;color:var(--danger)"></i>Liberar Boleto</h3>
+            <div class="modal-form-group">
+                <label class="modal-label">Número de boleto</label>
+                <input id="liberarNumero" type="number" class="modal-input" placeholder="Ej: 5432" />
+                <p class="info-text">El boleto volverá a estar disponible. Úsalo en casos de cancelación o error.</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal('liberar')">Cancelar</button>
+                <button id="confirmLiberar" class="btn-primary">Liberar Boleto</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== GLOBALS =====
+        let allBoletos = [];
+        let ganador = null;
+
+        // ===== UTILS =====
+        function getAuthToken() {
+            return localStorage.getItem('rifaplus_admin_token') || localStorage.getItem('admin_token') || localStorage.getItem('token');
+        }
+
+        async function fetchWithAuth(url, opts = {}) {
+            const token = getAuthToken();
+            opts.headers = opts.headers || {};
+            opts.headers['Content-Type'] = opts.headers['Content-Type'] || 'application/json';
+            if (token) opts.headers['Authorization'] = 'Bearer ' + token;
+            const res = await fetch(url, opts);
+            if (res.status === 401 || res.status === 403) {
+                alert('Sesión expirada o sin permisos.');
+                return null;
+            }
+            return res;
+        }
+
+        function openModal(which) {
+            document.getElementById(`modal${which.charAt(0).toUpperCase() + which.slice(1)}`).classList.add('active');
+        }
+
+        function closeModal(which) {
+            const modal = document.getElementById(`modal${which.charAt(0).toUpperCase() + which.slice(1)}`);
+            if (modal) modal.classList.remove('active');
+        }
+
+        function parseBoletosInput(input) {
+            const parts = input.split(',').map(p => p.trim()).filter(Boolean);
+            const out = new Set();
+            for (const p of parts) {
+                if (p.includes('-')) {
+                    const [a, b] = p.split('-').map(x => Number(x.trim()));
+                    if (isNaN(a) || isNaN(b)) continue;
+                    for (let i = Math.min(a, b); i <= Math.max(a, b); i++) out.add(i);
+                } else {
+                    const n = Number(p);
+                    if (!isNaN(n)) out.add(n);
+                }
+            }
+            return Array.from(out).sort((a, b) => a - b);
+        }
+
+        function normalizeBoleto(b) {
+            return {
+                numero: Number(b.numero || b.number || b.id || b.numero_boleto || b),
+                estado: (b.estado || b.state || 'disponible').toString().toLowerCase(),
+                numero_orden: b.numero_orden || b.orden || '',
+                cliente_nombre: b.cliente_nombre || b.nombre_cliente || '',
+                cliente_whatsapp: b.cliente_whatsapp || b.telefono_cliente || '',
+                fecha: b.created_at || b.fecha || ''
+            };
+        }
+
+        function renderEstadoBadge(estado) {
+            if (!estado) estado = 'disponible';
+            if (estado.includes('vend')) return `<span class="estado-badge badge-vendido"><i class="fas fa-check"></i> Vendido</span>`;
+            if (estado.includes('apart')) return `<span class="estado-badge badge-apartado"><i class="fas fa-hourglass-half"></i> Apartado</span>`;
+            return `<span class="estado-badge badge-disponible"><i class="fas fa-circle"></i> Disponible</span>`;
+        }
+
+        // ===== INIT =====
+        (async function init() {
+            await loadBoletos();
+            updateStats();
+        })();
+
+        async function loadBoletos() {
+            try {
+                const res = await fetchWithAuth('/api/admin/boletos?limit=0');
+                if (!res || !res.ok) return;
+                const json = await res.json();
+                allBoletos = (Array.isArray(json.data) ? json.data : Array.isArray(json) ? json : []).map(normalizeBoleto);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function updateStats() {
+            const total = allBoletos.length;
+            const vendidos = allBoletos.filter(b => b.estado.includes('vend')).length;
+            const apartados = allBoletos.filter(b => b.estado.includes('apart')).length;
+            const disponibles = total - vendidos - apartados;
+
+            document.getElementById('statTotal').textContent = total.toLocaleString();
+            document.getElementById('statVendidos').textContent = vendidos.toLocaleString();
+            document.getElementById('statApartados').textContent = apartados.toLocaleString();
+            document.getElementById('statDisponibles').textContent = disponibles.toLocaleString();
+        }
+
+        // ===== BÚSQUEDA DE BOLETO =====
+        document.getElementById('btnBuscarBoleto').addEventListener('click', async () => {
+            const num = Number(document.getElementById('searchBoleto').value.trim());
+            if (isNaN(num)) { alert('Ingresa un número válido'); return; }
+
+            const b = allBoletos.find(x => x.numero === num);
+            const result = document.getElementById('searchResult');
+
+            if (b) {
+                document.getElementById('resultNumero').textContent = b.numero;
+                document.getElementById('resultEstado').innerHTML = renderEstadoBadge(b.estado);
+                document.getElementById('resultOrden').textContent = b.numero_orden || '—';
+                document.getElementById('resultCliente').textContent = `${b.cliente_nombre || '—'} ${b.cliente_whatsapp || ''}`.trim() || '—';
+                document.getElementById('resultFecha').textContent = b.fecha ? new Date(b.fecha).toLocaleString('es-MX') : '—';
+                result.classList.add('active');
+            } else {
+                alert(`Boleto ${num} no encontrado`);
+                result.classList.remove('active');
+            }
+        });
+
+        // ===== MODALES =====
+        document.getElementById('btnModalGanador').addEventListener('click', () => openModal('ganador'));
+        document.getElementById('btnModalVenta').addEventListener('click', () => openModal('venta'));
+        document.getElementById('btnModalLiberar').addEventListener('click', () => openModal('liberar'));
+
+        document.getElementById('confirmGanador').addEventListener('click', async () => {
+            const num = Number(document.getElementById('inputGanador').value.trim());
+            if (isNaN(num)) { alert('Número inválido'); return; }
+            const b = allBoletos.find(x => x.numero === num);
+            if (!b) { alert(`Boleto ${num} no existe`); return; }
+            if (!b.estado.includes('vend')) { alert('El boleto debe estar vendido/confirmado'); return; }
+
+            if (!confirm(`¿Declarar ganador el boleto ${num}? Irreversible.`)) return;
+
+            try {
+                const res = await fetchWithAuth('/api/admin/declarar-ganador', { method: 'POST', body: JSON.stringify({ numero: num }) });
+                if (res && res.ok) {
+                    ganador = { numero: num, cliente: b.cliente_nombre };
+                    document.getElementById('ganadorTexto').textContent = `Boleto ${num} - ${b.cliente_nombre || 'Cliente'}`;
+                    document.getElementById('ganadorInfo').style.display = 'inline-flex';
+                    alert('Ganador declarado correctamente');
+                    closeModal('ganador');
+                } else {
+                    alert('Error al declarar ganador');
+                }
+            } catch (err) { console.error(err); alert('Error de red'); }
+        });
+
+        document.getElementById('confirmVenta').addEventListener('click', async () => {
+            const nombre = document.getElementById('ventaNombre').value.trim();
+            const whats = document.getElementById('ventaWhats').value.trim();
+            const boletosInput = document.getElementById('ventaBoletos').value.trim();
+            if (!nombre || !whats || !boletosInput) { alert('Completa todos los campos'); return; }
+
+            const nums = parseBoletosInput(boletosInput);
+            if (nums.length === 0) { alert('No se detectaron números válidos'); return; }
+
+            const payload = {
+                ordenId: `MAN-${Date.now()}`,
+                cliente: { nombre, whatsapp: whats },
+                boletos: nums,
+                precioUnitario: 50,
+                totales: { subtotal: nums.length * 50, descuento: 0, totalFinal: nums.length * 50 },
+                metodoPago: 'efectivo'
+            };
+
+            try {
+                const res = await fetchWithAuth('/api/admin/ordenes-manual', { method: 'POST', body: JSON.stringify(payload) });
+                if (res && res.ok) {
+                    alert(`Venta registrada: ${nums.length} boletos al cliente ${nombre}`);
+                    closeModal('venta');
+                    await loadBoletos();
+                    updateStats();
+                } else {
+                    alert('Error al registrar venta');
+                }
+            } catch (err) { console.error(err); alert('Error de red'); }
+        });
+
+        document.getElementById('confirmLiberar').addEventListener('click', async () => {
+            const num = Number(document.getElementById('liberarNumero').value.trim());
+            if (isNaN(num)) { alert('Número inválido'); return; }
+            if (!confirm(`¿Liberar boleto ${num}?`)) return;
+
+            try {
+                const res = await fetchWithAuth(`/api/admin/boletos/${num}/liberar`, { method: 'PATCH' });
+                if (res && res.ok) {
+                    alert('Boleto liberado');
+                    closeModal('liberar');
+                    await loadBoletos();
+                    updateStats();
+                } else {
+                    alert('Error al liberar boleto');
+                }
+            } catch (err) { console.error(err); alert('Error de red'); }
+        });
+
+        // ===== AUDITORÍA =====
+        document.getElementById('btnAudit').addEventListener('click', () => {
+            const desde = Number(document.getElementById('auditDesde').value.trim());
+            const hasta = Number(document.getElementById('auditHasta').value.trim());
+            if (isNaN(desde) || isNaN(hasta) || desde > hasta) { alert('Rango inválido'); return; }
+
+            const range = allBoletos.filter(b => b.numero >= desde && b.numero <= hasta);
+            const tbody = document.getElementById('auditBody');
+            tbody.innerHTML = '';
+
+            if (range.length === 0) {
+                document.getElementById('auditTable').style.display = 'none';
+                document.getElementById('auditEmpty').style.display = 'block';
+                return;
+            }
+
+            range.forEach(b => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="numero-bold">${b.numero}</td>
+                    <td>${renderEstadoBadge(b.estado)}</td>
+                    <td>${b.numero_orden || '—'}</td>
+                    <td><small>${b.cliente_nombre || '—'}<br/>${b.fecha ? new Date(b.fecha).toLocaleString('es-MX', {month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'}) : ''}</small></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('auditTable').style.display = 'table';
+            document.getElementById('auditEmpty').style.display = 'none';
+        });
+
+        // ===== EXPORT =====
+        document.getElementById('btnExportAudit').addEventListener('click', () => {
+            const data = allBoletos.map(b => ({
+                'Número': b.numero,
+                'Estado': b.estado,
+                'Orden': b.numero_orden || '',
+                'Cliente': b.cliente_nombre || '',
+                'WhatsApp': b.cliente_whatsapp || '',
+                'Fecha': b.fecha ? new Date(b.fecha).toLocaleString('es-MX') : ''
+            }));
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Boletos');
+            XLSX.writeFile(wb, `boletos_auditoria_${Date.now()}.xlsx`);
+        });
+
+        // ===== LOGOUT =====
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('rifaplus_admin_token');
+            localStorage.removeItem('admin_token');
+            localStorage.removeItem('token');
+            window.location.href = 'admin-dashboard.html';
+        });
+    </script>
+
+</body>
+</html>
