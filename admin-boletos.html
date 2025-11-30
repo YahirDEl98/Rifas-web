@@ -101,6 +101,625 @@
         .header-right {
             display: flex;
             align-items: center;
+            gap: 1rem;
+            margin-left: auto;
+        }
+
+        .btn-export, .btn-panel, .btn-logout {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-white);
+            color: var(--text-dark);
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-export:hover, .btn-panel:hover {
+            background: var(--bg-light);
+            border-color: var(--primary);
+        }
+
+        .btn-logout {
+            background: var(--danger);
+            color: white;
+            border-color: var(--danger);
+        }
+
+        .btn-logout:hover {
+            background: #c91230;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .search-container {
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-input-group input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-size: 0.85rem;
+        }
+
+        .search-input-group button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .search-input-group button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== TICKET CARD ===== */
+        .ticket-result {
+            display: none;
+        }
+
+        .ticket-result.active {
+            display: block;
+            margin-top: 2rem;
+        }
+
+        .ticket-card {
+            max-width: 600px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, white 100%);
+            border: 2px solid var(--primary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .ticket-numero {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .ticket-estado {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .ticket-divider {
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-body {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .ticket-field {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .ticket-field:last-of-type {
+            border-bottom: none;
+        }
+
+        .ticket-label {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .ticket-value {
+            color: var(--text-dark);
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .ticket-actions {
+            padding-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-ganador {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-ganador:hover {
+            background: #28872f;
+        }
+
+        .btn-liberar {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-liberar:hover {
+            background: #c91230;
+        }
+
+        .error-message {
+            background: #ffe0e0;
+            color: var(--danger);
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .success-message {
+            background: #e0f8e0;
+            color: var(--success);
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-vendido {
+            background: rgba(49, 162, 76, 0.2);
+            color: var(--success);
+        }
+
+        .badge-apartado {
+            background: rgba(180, 116, 12, 0.2);
+            color: var(--warning);
+        }
+
+        .badge-disponible {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-container">
+                    <img id="headerLogo" src="images/sorteos-yepe-logo.png" alt="Logo">
+                </div>
+                <div class="header-title">
+                    <div class="header-title-main">Boletos</div>
+                    <div class="header-title-sub">Gestión Técnica</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn-panel" onclick="goToPanel()">
+                    <i class="fas fa-th-large"></i> Panel
+                </button>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="search-container">
+            <div class="search-input-group">
+                <input 
+                    type="number" 
+                    id="searchBoleto" 
+                    placeholder="Ingresa número de boleto..."
+                    onkeypress="if(event.key === 'Enter') buscarBoleto()"
+                >
+                <button onclick="buscarBoleto()">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+        </div>
+
+        <div class="ticket-result" id="ticketResult">
+            <div class="ticket-card" id="ticketCard"></div>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        // ===== CONFIG =====
+        const API_BASE = 'http://localhost:3000';
+        let allBoletos = [];
+        let currentBoleto = null;
+
+        // ===== AUTH =====
+        function getToken() {
+            return localStorage.getItem('rifaplus_admin_token') || 
+                   localStorage.getItem('admin_token') || 
+                   localStorage.getItem('token');
+        }
+
+        function verificarAutenticacion() {
+            const token = getToken();
+            if (!token) {
+                alert('No hay sesión activa. Redirigiendo a login...');
+                window.location.href = 'admin-ordenes.html';
+                return false;
+            }
+            return true;
+        }
+
+        function logout() {
+            localStorage.removeItem('rifaplus_admin_token');
+            localStorage.removeItem('admin_token');
+            localStorage.removeItem('token');
+            window.location.href = 'admin-ordenes.html';
+        }
+
+        function goToPanel() {
+            window.location.href = 'admin-ordenes.html';
+        }
+
+        // ===== INIT CONFIG =====
+        function initializeConfig() {
+            const config = window.rifaplusConfig || {};
+            const clienteLogo = config.cliente?.logo || 'images/sorteos-yepe-logo.png';
+            document.getElementById('headerLogo').src = clienteLogo;
+        }
+
+        // ===== FETCH WITH AUTH =====
+        async function fetchWithAuth(url, opts = {}) {
+            const token = getToken();
+            opts.headers = opts.headers || {};
+            opts.headers['Content-Type'] = 'application/json';
+            if (token) opts.headers['Authorization'] = 'Bearer ' + token;
+            
+            const res = await fetch(url, opts);
+            
+            if (res.status === 401 || res.status === 403) {
+                logout();
+                return null;
+            }
+            return res;
+        }
+
+        // ===== LOAD ALL BOLETOS =====
+        async function cargarBoletos() {
+            try {
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/boletos?limit=0`);
+                if (!res || !res.ok) throw new Error('Error al cargar boletos');
+                
+                const json = await res.json();
+                allBoletos = json.data || [];
+            } catch (err) {
+                console.error('Error cargando boletos:', err);
+                showError('Error al cargar datos de boletos');
+            }
+        }
+
+        // ===== BUSCAR BOLETO =====
+        async function buscarBoleto() {
+            const num = Number(document.getElementById('searchBoleto').value.trim());
+            
+            if (isNaN(num) || num <= 0) {
+                showError('Ingresa un número válido');
+                return;
+            }
+
+            hideMessages();
+            const boleto = allBoletos.find(b => b.numero === num);
+
+            if (!boleto) {
+                showError(`Boleto ${num} no encontrado`);
+                document.getElementById('ticketResult').classList.remove('active');
+                return;
+            }
+
+            currentBoleto = boleto;
+            renderTicket(boleto);
+            document.getElementById('ticketResult').classList.add('active');
+        }
+
+        // ===== RENDER TICKET =====
+        function renderTicket(boleto) {
+            const estadoBadge = getEstadoBadge(boleto.estado);
+            const nombreCliente = boleto.cliente_nombre || 'N/A';
+            const whatsapp = boleto.cliente_whatsapp || 'N/A';
+            const fecha = boleto.created_at ? new Date(boleto.created_at).toLocaleDateString('es-ES') : 'N/A';
+
+            const html = `
+                <div class="ticket-header">
+                    <div class="ticket-numero">#${String(boleto.numero).padStart(5, '0')}</div>
+                    <div class="ticket-estado">${estadoBadge}</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-field">
+                        <div class="ticket-label">Orden</div>
+                        <div class="ticket-value">${boleto.numero_orden || 'N/A'}</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Cliente</div>
+                        <div class="ticket-value">${nombreCliente}</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">WhatsApp</div>
+                        <div class="ticket-value">${whatsapp}</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Estado</div>
+                        <div class="ticket-value"><span class="badge badge-${boleto.estado.toLowerCase().replace(/\s/g, '-')}">${boleto.estado}</span></div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Fecha</div>
+                        <div class="ticket-value">${fecha}</div>
+                    </div>
+                    <div class="ticket-actions">
+                        <button class="btn-action btn-ganador" onclick="declararGanador()">
+                            <i class="fas fa-crown"></i> Ganador
+                        </button>
+                        <button class="btn-action btn-liberar" onclick="liberarBoleto()">
+                            <i class="fas fa-unlock"></i> Liberar
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('ticketCard').innerHTML = html;
+        }
+
+        // ===== GET ESTADO BADGE =====
+        function getEstadoBadge(estado) {
+            if (estado.includes('vend') || estado === 'completada') {
+                return '<span class="badge badge-vendido"><i class="fas fa-check"></i> Vendido</span>';
+            } else if (estado.includes('apart') || estado.includes('pendiente')) {
+                return '<span class="badge badge-apartado"><i class="fas fa-hourglass-half"></i> Apartado</span>';
+            }
+            return '<span class="badge badge-disponible"><i class="fas fa-circle"></i> Disponible</span>';
+        }
+
+        // ===== DECLARAR GANADOR =====
+        async function declararGanador() {
+            if (!currentBoleto) return;
+
+            const confirmar = confirm(`¿Declarar boleto #${currentBoleto.numero} como ganador?`);
+            if (!confirmar) return;
+
+            try {
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/declarar-ganador`, {
+                    method: 'POST',
+                    body: JSON.stringify({ numero: currentBoleto.numero })
+                });
+
+                if (!res || !res.ok) throw new Error('Error al declarar ganador');
+
+                const json = await res.json();
+                showSuccess(`¡Boleto #${currentBoleto.numero} declarado como ganador!`);
+            } catch (err) {
+                console.error('Error:', err);
+                showError('Error al declarar ganador');
+            }
+        }
+
+        // ===== LIBERAR BOLETO =====
+        async function liberarBoleto() {
+            if (!currentBoleto) return;
+
+            const confirmar = confirm(`¿Liberar boleto #${currentBoleto.numero}?`);
+            if (!confirmar) return;
+
+            try {
+                const res = await fetchWithAuth(`${API_BASE}/api/admin/boletos/${currentBoleto.numero}/liberar`, {
+                    method: 'PATCH'
+                });
+
+                if (!res || !res.ok) throw new Error('Error al liberar boleto');
+
+                const json = await res.json();
+                showSuccess(`¡Boleto #${currentBoleto.numero} liberado correctamente!`);
+                
+                // Recargar boletos y limpiar búsqueda
+                await cargarBoletos();
+                setTimeout(() => {
+                    document.getElementById('searchBoleto').value = '';
+                    document.getElementById('ticketResult').classList.remove('active');
+                }, 1500);
+            } catch (err) {
+                console.error('Error:', err);
+                showError('Error al liberar boleto');
+            }
+        }
+
+        // ===== MESSAGES =====
+        function showError(msg) {
+            const el = document.getElementById('errorMessage');
+            el.textContent = msg;
+            el.classList.add('show');
+            hideSuccessAfterDelay();
+        }
+
+        function showSuccess(msg) {
+            const el = document.getElementById('successMessage');
+            el.textContent = msg;
+            el.classList.add('show');
+            hideSuccessAfterDelay();
+        }
+
+        function hideMessages() {
+            document.getElementById('errorMessage').classList.remove('show');
+            document.getElementById('successMessage').classList.remove('show');
+        }
+
+        function hideSuccessAfterDelay() {
+            setTimeout(() => {
+                document.getElementById('errorMessage').classList.remove('show');
+                document.getElementById('successMessage').classList.remove('show');
+            }, 4000);
+        }
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', async () => {
+            initializeConfig();
+            
+            if (!verificarAutenticacion()) return;
+            
+            await cargarBoletos();
+            document.getElementById('searchBoleto').focus();
+        });
+    </script>
+</body>
+</html>
+            --primary-dark: #5a2abf;
+            --primary-light: #F3E9FF;
+            --success: #31A24C;
+            --danger: #E4163A;
+            --warning: #B4740C;
+            --text-dark: #0A0E27;
+            --text-light: #65676B;
+            --text-lighter: #8A8D91;
+            --bg-light: #F0F2F5;
+            --bg-white: #FFFFFF;
+            --border-color: #CED0D4;
+            --divider: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Ubuntu', sans-serif;
+            background: #F8F9FA;
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .header-title-main {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .header-title-sub {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
             gap: 0.75rem;
             flex-wrap: wrap;
             justify-content: flex-end;
